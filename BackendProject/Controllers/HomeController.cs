@@ -31,7 +31,6 @@ namespace BackendProject.Controllers
                 .ToListAsync();
             ProductHeader productHeader = await _context.ProductHeaders.FirstOrDefaultAsync();
             IEnumerable<Banner> banners = await _context.Banners.ToListAsync();
-            List<Blog> blogs = await _context.Blogs.ToListAsync();
            
             HomeVM homeVM = new HomeVM
             {                             
@@ -40,7 +39,7 @@ namespace BackendProject.Controllers
                 Products= products,
                 ProductHeader = productHeader,
                 Banners = banners,
-                Blogs = blogs
+              
             };
             return View(homeVM);
         }

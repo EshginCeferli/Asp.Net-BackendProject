@@ -113,7 +113,12 @@ namespace BackendProject.Migrations
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
+                    b.Property<int?>("ProductHeaderId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("ProductHeaderId");
 
                     b.ToTable("Products");
                 });
@@ -190,6 +195,13 @@ namespace BackendProject.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Sliders");
+                });
+
+            modelBuilder.Entity("BackendProject.Models.Product", b =>
+                {
+                    b.HasOne("BackendProject.Models.ProductHeader", null)
+                        .WithMany("Product")
+                        .HasForeignKey("ProductHeaderId");
                 });
 
             modelBuilder.Entity("BackendProject.Models.ProductImage", b =>

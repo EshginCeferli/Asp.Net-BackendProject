@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ESQIN\\OneDrive\\İş masası\\Aspi.Net\\Asp.Net-FinalProject\\BackendProject\\BackendProject\\BackendProject.csproj": {}
+    "C:\\Users\\ESQIN\\OneDrive\\İş masası\\CloneProjects\\Asp.Net-BackendProject\\BackendProject\\BackendProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ESQIN\\OneDrive\\İş masası\\Aspi.Net\\Asp.Net-FinalProject\\BackendProject\\BackendProject\\BackendProject.csproj": {
+    "C:\\Users\\ESQIN\\OneDrive\\İş masası\\CloneProjects\\Asp.Net-BackendProject\\BackendProject\\BackendProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ESQIN\\OneDrive\\İş masası\\Aspi.Net\\Asp.Net-FinalProject\\BackendProject\\BackendProject\\BackendProject.csproj",
+        "projectUniqueName": "C:\\Users\\ESQIN\\OneDrive\\İş masası\\CloneProjects\\Asp.Net-BackendProject\\BackendProject\\BackendProject.csproj",
         "projectName": "BackendProject",
-        "projectPath": "C:\\Users\\ESQIN\\OneDrive\\İş masası\\Aspi.Net\\Asp.Net-FinalProject\\BackendProject\\BackendProject\\BackendProject.csproj",
+        "projectPath": "C:\\Users\\ESQIN\\OneDrive\\İş masası\\CloneProjects\\Asp.Net-BackendProject\\BackendProject\\BackendProject.csproj",
         "packagesPath": "C:\\Users\\ESQIN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ESQIN\\OneDrive\\İş masası\\Aspi.Net\\Asp.Net-FinalProject\\BackendProject\\BackendProject\\obj\\",
+        "outputPath": "C:\\Users\\ESQIN\\OneDrive\\İş masası\\CloneProjects\\Asp.Net-BackendProject\\BackendProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qq313eBBE/nlI2GBjpv8hex4N5PegLGqts6xsXmsQXOKAyxEuZtTqL51jBQ+QLceio2dXCeC09ib8o1Aa7TXdA==",
+  "dgSpecHash": "h5JthOdC4csEp5aTUPJ2sLQxNGLJL4Y++hMBW3PLSaRtw5pnrwuPMtZRkEHs7HC5fhJnkH0zioYS6ZkV+gX+sQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ESQIN\\OneDrive\\İş masası\\Aspi.Net\\Asp.Net-FinalProject\\BackendProject\\BackendProject\\BackendProject.csproj",
+  "projectFilePath": "C:\\Users\\ESQIN\\OneDrive\\İş masası\\CloneProjects\\Asp.Net-BackendProject\\BackendProject\\BackendProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ESQIN\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\ESQIN\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
