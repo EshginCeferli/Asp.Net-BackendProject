@@ -1,5 +1,9 @@
 ﻿
+using BackendProject.Data;
+using BackendProject.Models;
+using BackendProject.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -11,10 +15,34 @@ namespace BackendProject.Controllers
 {
     public class HomeController : Controller
     {
-       
-        public IActionResult Index()
+        private readonly AppDbContext _context;
+
+        public HomeController(AppDbContext context)
         {
-            return View();
+            _context = context;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            IEnumerable<Slider> sliders = await _context.Sliders.ToListAsync();
+            IEnumerable<Link> links = await _context.Links.ToListAsync();
+            IEnumerable<Product> products = await _context.Products
+                .Include(m=>m.ProductImages)               
+                .ToListAsync();
+            ProductHeader productHeader = await _context.ProductHeaders.FirstOrDefaultAsync();
+            IEnumerable<Banner> banners = await _context.Banners.ToListAsync();
+            List<Blog> blogs = await _context.Blogs.ToListAsync();
+           
+            HomeVM homeVM = new HomeVM
+            {                             
+                Sliders = sliders,
+                Links = links,
+                Products= products,
+                ProductHeader = productHeader,
+                Banners = banners,
+                Blogs = blogs
+            };
+            return View(homeVM);
         }
 
     }

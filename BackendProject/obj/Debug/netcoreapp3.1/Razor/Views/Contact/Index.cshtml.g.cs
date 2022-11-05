@@ -19,8 +19,15 @@ using BackendProject;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\ESQIN\OneDrive\İş masası\Aspi.Net\Asp.Net-FinalProject\BackendProject\BackendProject\Views\_ViewImports.cshtml"
+using BackendProject.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b73736ba9751e95e880427698cdaed7de0d596f4", @"/Views/Contact/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"02e0b28af356bf049dad8b3dc8a1b39668b618e1", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1dd4a419c8de22fb39d7e52361676b71db6fadeb", @"/Views/_ViewImports.cshtml")]
     public class Views_Contact_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("id", new global::Microsoft.AspNetCore.Html.HtmlString("contact-form"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -87,7 +94,7 @@ using BackendProject;
         <div class=""container"">
             <d");
             WriteLiteral("iv class=\"row\">\r\n                <div class=\"col-lg-6\">\r\n                    <div class=\"contact-message\">\r\n                        <h2 class=\"contact-title\">tell us your project</h2>\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b73736ba9751e95e880427698cdaed7de0d596f46088", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b73736ba9751e95e880427698cdaed7de0d596f46322", async() => {
                 WriteLiteral(@"
                             <div class=""row"">
                                 <div class=""col-lg-6 col-md-6 col-sm-6"">
