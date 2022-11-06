@@ -60,42 +60,19 @@
                         <div class="blog-widget">
                             <h4 class="blog-widget-title">Recent Posts</h4>
                             <ul class="recent-posts-inner">
+                                @foreach (var blog in Model.Blogs.OrderByDescending(m => m.Id))
+                                {
                                 <li class="recent-posts">
                                     <div class="recent-posts-image">
-                                        <a href="blog-details.html"><img src="~/assets/img/blog/recent-01.jpg" alt="post thumb"></a>
+                                        <a href="blog-details.html"><img src="~/assets/img/blog/@blog.Image" alt="post thumb"></a>
                                     </div>
                                     <div class="recent-posts-body">
-                                        <span class="recent-posts-meta">February  13,  2018</span>
-                                        <h6 class="recent-posts-title"><a href="blog-details.html">Diffrent title gose This is demo</a></h6>
+                                        <span class="recent-posts-meta">@blog.Date</span>
+                                        <h6 class="recent-posts-title"><a href="blog-details.html">@blog.Title</a></h6>
                                     </div>
                                 </li>
-                                <li class="recent-posts">
-                                    <div class="recent-posts-image">
-                                        <a href="blog-details.html"><img src="~/assets/img/blog/recent-02.jpg" alt="post thumb"></a>
-                                    </div>
-                                    <div class="recent-posts-body">
-                                        <span class="recent-posts-meta">February  13,  2018</span>
-                                        <h6 class="recent-posts-title"><a href="blog-details.html">Diffrent title gose This is demo</a></h6>
-                                    </div>
-                                </li>
-                                <li class="recent-posts">
-                                    <div class="recent-posts-image">
-                                        <a href="blog-details.html"><img src="~/assets/img/blog/recent-03.jpg" alt="post thumb"></a>
-                                    </div>
-                                    <div class="recent-posts-body">
-                                        <span class="recent-posts-meta">February  13,  2018</span>
-                                        <h6 class="recent-posts-title"><a href="blog-details.html">Diffrent title gose This is demo</a></h6>
-                                    </div>
-                                </li>
-                                <li class="recent-posts">
-                                    <div class="recent-posts-image">
-                                        <a href="blog-details.html"><img src="~/assets/img/blog/recent-04.jpg" alt="post thumb"></a>
-                                    </div>
-                                    <div class="recent-posts-body">
-                                        <span class="recent-posts-meta">February  13,  2018</span>
-                                        <h6 class="recent-posts-title"><a href="blog-details.html">Diffrent title gose This is demo</a></h6>
-                                    </div>
-                                </li>
+                                }
+
                             </ul>
                         </div>
                         <!-- widget item end -->

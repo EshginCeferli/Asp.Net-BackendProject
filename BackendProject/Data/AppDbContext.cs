@@ -23,7 +23,7 @@ namespace BackendProject.Data
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Widget> Widgets { get; set; }
         public DbSet<Social> Socials { get; set; }
-
+        public DbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -39,6 +39,7 @@ namespace BackendProject.Data
             modelBuilder.Entity<Brand>().HasQueryFilter(m => !m.IsDeleted);
             modelBuilder.Entity<Widget>().HasQueryFilter(m => !m.IsDeleted);
             modelBuilder.Entity<Social>().HasQueryFilter(m => !m.IsDeleted);
+            modelBuilder.Entity<Category>().HasQueryFilter(m => !m.IsDeleted);
         }
     }
 }
