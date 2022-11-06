@@ -23,10 +23,15 @@ namespace BackendProject.Controllers
             IEnumerable<Blog> blogs = await _context.Blogs.ToListAsync();
             Widget widget = await _context.Widgets.FirstOrDefaultAsync();
             IEnumerable<Social> socials = await _context.Socials.ToListAsync();
+            IEnumerable<Category> categories = await _context.Categories.ToListAsync();
+            IEnumerable<Tag> tags = await _context.Tags.ToListAsync();
+
             BlogVM blogVM = new BlogVM {
                 Blogs = blogs,
                 Widget = widget,
-                Socials =socials
+                Socials =socials,
+                Categories = categories,
+                Tags= tags
             };
 
             return View(blogVM);

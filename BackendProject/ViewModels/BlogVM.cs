@@ -11,5 +11,7 @@ namespace BackendProject.ViewModels
         public IEnumerable<Blog> Blogs { get; set; }
         public Widget Widget { get; set; }
         public IEnumerable<Social> Socials { get; set; }
+        public IEnumerable<Category> Categories { get; set; }
+        public IEnumerable<Tag> Tags { get; set; }
     }
 }

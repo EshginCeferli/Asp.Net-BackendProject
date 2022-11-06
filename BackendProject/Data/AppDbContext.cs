@@ -24,6 +24,7 @@ namespace BackendProject.Data
         public DbSet<Widget> Widgets { get; set; }
         public DbSet<Social> Socials { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Tag> Tags { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -40,6 +41,7 @@ namespace BackendProject.Data
             modelBuilder.Entity<Widget>().HasQueryFilter(m => !m.IsDeleted);
             modelBuilder.Entity<Social>().HasQueryFilter(m => !m.IsDeleted);
             modelBuilder.Entity<Category>().HasQueryFilter(m => !m.IsDeleted);
+            modelBuilder.Entity<Tag>().HasQueryFilter(m => !m.IsDeleted);
         }
     }
 }
