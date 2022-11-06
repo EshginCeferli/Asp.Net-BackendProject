@@ -3,14 +3,16 @@ using BackendProject.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BackendProject.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221106063434_addColorTable")]
+    partial class addColorTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -231,48 +233,6 @@ namespace BackendProject.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Sliders");
-                });
-
-            modelBuilder.Entity("BackendProject.Models.Social", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Icon")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Socials");
-                });
-
-            modelBuilder.Entity("BackendProject.Models.Widget", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Fullname")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Role")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Widgets");
                 });
 
             modelBuilder.Entity("BackendProject.Models.ProductImage", b =>

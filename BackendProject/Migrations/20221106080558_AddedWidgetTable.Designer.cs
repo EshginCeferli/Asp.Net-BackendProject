@@ -3,14 +3,16 @@ using BackendProject.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BackendProject.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221106080558_AddedWidgetTable")]
+    partial class AddedWidgetTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -233,24 +235,6 @@ namespace BackendProject.Migrations
                     b.ToTable("Sliders");
                 });
 
-            modelBuilder.Entity("BackendProject.Models.Social", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Icon")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Socials");
-                });
-
             modelBuilder.Entity("BackendProject.Models.Widget", b =>
                 {
                     b.Property<int>("Id")
@@ -268,6 +252,9 @@ namespace BackendProject.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Role")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Social")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

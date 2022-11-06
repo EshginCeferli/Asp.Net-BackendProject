@@ -1,4 +1,4 @@
-﻿
+﻿@model BlogVM
 @{
     ViewData["Title"] = "Index";
 }
@@ -14,8 +14,7 @@
                             <h1 class="breadcrumb-title">Blog</h1>
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item"><a href="blog-right-sidebar.html">Blog</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
+                                <li class="breadcrumb-item active" aria-current="page">Blog Left Sidebar</li>
                             </ul>
                         </nav>
                     </div>
@@ -28,21 +27,22 @@
     <div class="blog-main-wrapper section-padding">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 order-2">
+                <div class="col-lg-3 order-2 order-lg-1">
                     <div class="blog-widget-wrapper">
                         <!-- widget item start -->
                         <div class="blog-widget">
                             <div class="blog-widget-img">
-                                <img src="~/assets/img/blog/11.jpg" alt="author thumb" />
+                                <img src="~/assets/img/blog/@Model.Widget.Image" alt="author thumb" />
                             </div>
                             <div class="blog-author-title text-center">
-                                <h5>Erik Jhonson</h5>
-                                <span>UI UX Designer</span>
+                                <h5>@Model.Widget.Fullname</h5>
+                                <span>@Model.Widget.Role</span>
                                 <div class="blog-widget-icon">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-vimeo"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                                    @foreach (var social in Model.Socials)
+                                    {
+                                        <a href="#"><i class="fa @social.Icon"></i></a>
+                                    }
+
                                 </div>
                             </div>
                         </div>
@@ -126,145 +126,47 @@
                         <!-- widget item end -->
                     </div>
                 </div>
-                <div class="col-lg-9 order-1">
+                <div class="col-lg-9 order-1 order-lg-2">
                     <div class="row">
-                        <div class="col-12">
-                            <!-- blog single item start -->
-                            <div class="blog-post-item">
-                                <div class="blog-thumb">
-                                    <img src="~/assets/img/blog/blog-details-1.jpg" alt="blog thumb">
-                                </div>
-                                <div class="blog-content blog-details">
-                                    <h5 class="blog-title">
-                                        Celebrity Daughter Opens About Upto Having Her Eye
-                                    </h5>
-                                    <ul class="blog-meta">
-                                        <li><span>By: </span>Admin,</li>
-                                        <li><span>On: </span>14.07.2029</li>
-                                    </ul>
-                                    <p>
-                                        Bigger ipsum dolor sit amet consectetur adipisicing elit. Voluptate perferendis
-                                        consequuntur illo aliquid nihil ad neque, debitis praesentium libero ullam
-                                        asperiores exercitationem deserunt inventore facilis, officiis,
-                                    </p>
-                                    <blockquote>
-                                        <p>
-                                            Quisque semper nunc vitae erat pellentesque, ac placerat arcu consectetur.
-                                            venenatis elit ac ultrices convallis. Duis est nisi, tincidunt ac urna sed,
-                                            cursus blandit lectus. In ullamcorper sit amet ligula ut eleifend. Proin
-                                            dictum
-                                            tempor ligula, ac feugiat metus. Sed finibus tortor eu scelerisque
-                                            scelerisque.
-                                        </p>
-                                    </blockquote>
-                                    <p>
-                                        aliquam maiores asperiores recusandae commodi blanditiis ipsum tempora culpa
-                                        possimus assumenda ab quidem a voluptatum quia natus? Ex neque, saepe
-                                        reiciendis
-                                        quasi velit perspiciatis error vel quas quibusdam autem nesciunt voluptas odit
-                                        quis
-                                        dignissimos eos aspernatur voluptatum est repellat. Pariatur praesentium,
-                                        corrupti
-                                        deserunt ducimus quo doloremque nostrum aspernatur saepe cupiditate sit autem
-                                        exercitationem debitis, maiores vitae perferendis nemo? Voluptas illo, animi
-                                        temporibus quod earum molestias eaque, iure rem amet autem dignissimos officia
-                                        dolores numquam distinctio esse voluptates optio pariatur aspernatur omnis?
-                                        Ipsam
-                                        qui commodi velit natus reiciendis quod quibusdam nemo eveniet similique animi!
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- blog single item start -->
-                            <!-- comment area start -->
-                            <div class="comment-section section-padding">
-                                <h5>03 Comment</h5>
-                                <ul>
-                                    <li>
-                                        <div class="author-avatar">
-                                            <img src="~/assets/img/blog/comment-icon.png" alt="">
-                                        </div>
-                                        <div class="comment-body">
-                                            <span class="reply-btn"><a href="#">Reply</a></span>
-                                            <h5 class="comment-author">Admin</h5>
-                                            <div class="comment-post-date">
-                                                15 Dec, 2019 at 9:30pm
-                                            </div>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim maiores
-                                                adipisci optio ex, laboriosam facilis non pariatur itaque illo sunt?
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li class="comment-children">
-                                        <div class="author-avatar">
-                                            <img src="~/assets/img/blog/comment-icon.png" alt="">
-                                        </div>
-                                        <div class="comment-body">
-                                            <span class="reply-btn"><a href="#">Reply</a></span>
-                                            <h5 class="comment-author">Admin</h5>
-                                            <div class="comment-post-date">
-                                                20 Nov, 2019 at 9:30pm
-                                            </div>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim maiores
-                                                adipisci optio ex, laboriosam facilis non pariatur itaque illo sunt?
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="author-avatar">
-                                            <img src="~/assets/img/blog/comment-icon.png" alt="">
-                                        </div>
-                                        <div class="comment-body">
-                                            <span class="reply-btn"><a href="#">Reply</a></span>
-                                            <h5 class="comment-author">Admin</h5>
-                                            <div class="comment-post-date">
-                                                25 Jan, 2019 at 9:30pm
-                                            </div>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim maiores
-                                                adipisci optio ex, laboriosam facilis non pariatur itaque illo sunt?
-                                            </p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- comment area end -->
-                            <!-- start blog comment box -->
-                            <div class="blog-comment-wrapper">
-                                <h5>Leave A Reply</h5>
-                                <p>Email address will not be published. Required fields are marked *</p>
-                                <form action="#">
-                                    <div class="comment-post-box">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <label>Comment</label>
-                                                <textarea name="commnet" placeholder="Write a comment"></textarea>
-                                            </div>
-                                            <div class="col-lg-4 col-md-4">
-                                                <label>Name</label>
-                                                <input type="text" class="coment-field" placeholder="Name">
-                                            </div>
-                                            <div class="col-lg-4 col-md-4">
-                                                <label>Email</label>
-                                                <input type="text" class="coment-field" placeholder="Email">
-                                            </div>
-                                            <div class="col-lg-4 col-md-4">
-                                                <label>Website</label>
-                                                <input type="text" class="coment-field" placeholder="Website">
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="coment-btn">
-                                                    <input class="btn" type="submit" name="submit" value="POST COMMENT">
-                                                </div>
-                                            </div>
-                                        </div>
+                        @foreach (var blog in Model.Blogs)
+                        {
+                            <div class="col-md-6">
+                                <!-- blog single item start -->
+                                <div class="blog-post-item mb-30">
+                                    <div class="blog-thumb">
+                                        <a href="blog-details.html">
+                                            <img src="~/assets/img/blog/@blog.Image" alt="blog thumb">
+                                        </a>
                                     </div>
-                                </form>
+                                    <div class="blog-content">
+                                        <h5 class="blog-title">
+                                            <a href="blog-details.html">
+                                                @blog.Title
+                                            </a>
+                                        </h5>
+                                        <ul class="blog-meta">
+                                            <li><span>By: </span>@blog.By</li>
+                                            <li><span>On: </span>@blog.Date</li>
+                                        </ul>
+                                        <a href="blog-details.html" class="read-more">Read More...</a>
+                                    </div>
+                                </div>
+                                <!-- blog single item start -->
                             </div>
-                            <!-- start blog comment box -->
-                        </div>
+                        }
+
                     </div>
+                    <!-- start pagination area -->
+                    <div class="paginatoin-area text-center">
+                        <ul class="pagination-box">
+                            <li><a class="Previous" href="#"><i class="ion-ios-arrow-left"></i></a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a class="Next" href="#"><i class="ion-ios-arrow-right"></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- end pagination area -->
                 </div>
             </div>
         </div>

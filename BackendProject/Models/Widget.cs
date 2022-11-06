@@ -5,11 +5,12 @@ using System.Threading.Tasks;
 
 namespace BackendProject.Models
 {
-    public class Link : BaseEntity
+    public class Widget:BaseEntity
     {
         public string Image { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string Color { get; set; }
+        public string Fullname { get; set; }
+        public string Role { get; set; }
+        //public Social Social { get; set; }
+
     }
 }
