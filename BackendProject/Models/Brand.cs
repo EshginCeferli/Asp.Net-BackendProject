@@ -5,11 +5,8 @@ using System.Threading.Tasks;
 
 namespace BackendProject.Models
 {
-    public class Blog:BaseEntity
+    public class Brand:BaseEntity
     {
         public string Image { get; set; }
-        public string Title { get; set; }
-        public  string By { get; set; }
-        public string Date { get; set; } = DateTime.Now.ToString();
     }
 }

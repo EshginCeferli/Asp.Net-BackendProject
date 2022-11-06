@@ -19,6 +19,8 @@ namespace BackendProject.Data
         public DbSet<ProductHeader> ProductHeaders { get; set; }
         public DbSet<Banner> Banners { get; set; }
         public DbSet<Blog> Blogs { get; set; }
+        public DbSet<BlogHeader> BlogHeaders { get; set; }
+        public DbSet<Brand> Brands { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -30,6 +32,8 @@ namespace BackendProject.Data
             modelBuilder.Entity<ProductHeader>().HasQueryFilter(m => !m.IsDeleted);
             modelBuilder.Entity<Banner>().HasQueryFilter(m => !m.IsDeleted);
             modelBuilder.Entity<Blog>().HasQueryFilter(m => !m.IsDeleted);
+            modelBuilder.Entity<BlogHeader>().HasQueryFilter(m => !m.IsDeleted);
+            modelBuilder.Entity<Brand>().HasQueryFilter(m => !m.IsDeleted);
         }
     }
 }

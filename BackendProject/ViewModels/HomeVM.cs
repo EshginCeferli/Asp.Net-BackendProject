@@ -14,5 +14,7 @@ namespace BackendProject.ViewModels
         public ProductHeader ProductHeader { get; set; }
         public IEnumerable<Banner> Banners { get; set; }
         public IEnumerable<Blog> Blogs { get; set; }
+        public BlogHeader BlogHeader { get; set; }
+        public IEnumerable<Brand> Brands { get; set; }
     }
 }
