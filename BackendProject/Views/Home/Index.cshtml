@@ -219,7 +219,7 @@
                             <!-- blog single item start -->
                             <div class="blog-post-item">
                                 <div class="blog-thumb">
-                                    <a href="blog-details.html">
+                                    <a asp-controller="BlogDetail" asp-action="Index" asp-route-id="@blog.Id">
                                         <img src="~/assets/img/blog/@blog.Image" alt="blog thumb">
                                     </a>
                                 </div>

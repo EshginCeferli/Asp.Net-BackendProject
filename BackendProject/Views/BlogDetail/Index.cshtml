@@ -60,7 +60,7 @@
                         <div class="blog-widget">
                             <h4 class="blog-widget-title">Recent Posts</h4>
                             <ul class="recent-posts-inner">
-                                @foreach (var blog in Model.Blogs.OrderByDescending(m => m.Id))
+                                @foreach (var blog in Model.RecentBlogs.OrderByDescending(m => m.Id))
                                 {
                                     <li class="recent-posts">
                                         <div class="recent-posts-image">
@@ -105,34 +105,33 @@
                     <div class="row">
                         <div class="col-12">
                             <!-- blog single item start -->
-                            @foreach (var blog in Model.Blogs)
-                            {
+                           
                                 <div class="blog-post-item">
                                     <div class="blog-thumb">
-                                        <img src="~/assets/img/blog/@blog.Image" alt="blog thumb">
+                                        <img src="~/assets/img/blog/@Model.Blog.Image" alt="blog thumb">
                                     </div>
                                     <div class="blog-content blog-details">
                                         <h5 class="blog-title">
-                                            @blog.Title
+                                            @Model.Blog.Title
                                         </h5>
                                         <ul class="blog-meta">
-                                            <li><span>By: </span>@blog.By</li>
+                                            <li><span>By: </span>@Model.Blog.By</li>
                                             <li><span>On: </span>14.07.2029</li>
                                         </ul>
                                         <p>
-                                           @blog.ArticleHeader
+                                           @Model.Blog.ArticleHeader
                                         </p>
                                         <blockquote>
                                             <p>
-                                                @blog.ArticleQuote
+                                                @Model.Blog.ArticleQuote
                                             </p>
                                         </blockquote>
                                         <p>
-                                            @blog.ArticleContext
+                                            @Model.Blog.ArticleContext
                                         </p>
                                     </div>
                                 </div>
-                            }
+                            
                             <!-- blog single item start -->
                             <!-- comment area start -->
                             <div class="comment-section section-padding">

@@ -32,8 +32,7 @@ namespace BackendProject.Controllers
                 Widget = widget,
                 Socials =socials,
                 Categories = categories,
-                Tags= tags,
-             
+                Tags= tags,             
             };
 
             return View(blogVM);

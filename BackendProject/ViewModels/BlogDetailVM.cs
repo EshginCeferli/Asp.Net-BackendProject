@@ -8,7 +8,8 @@ namespace BackendProject.ViewModels
 {
     public class BlogDetailVM
     {
-        public IEnumerable<Blog> Blogs { get; set; }
+        public Blog Blog { get; set; }
+        public List<RecentBlog> RecentBlogs { get; set; }
         public Widget Widget { get; set; }
         public IEnumerable<Social> Socials { get; set; }
         public IEnumerable<Category> Categories { get; set; }
