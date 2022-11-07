@@ -75,7 +75,7 @@
                         {
                             <div class="product-item mb-50">
                                 <div class="product-thumb">
-                                    <a href="product-details.html">
+                                    <a asp-controller="ProductDetail" asp-action="Index" asp-route-id="@product.Id">
                                         @foreach (var item in product.ProductImages.Where(m=>m.IsMain))
                                         {
                                             <img src="~/assets/img/product/@item.Image" alt="">
@@ -158,8 +158,8 @@
                             <div class="slide-item">
                                 <div class="pro-item-small mt-30">
                                     <div class="product-thumb">
-                                        <a href="product-details.html">
-                                            @foreach (var image in item.ProductImages)
+                                        <a  asp-controller="ProductDetail" asp-action="Index" asp-route-id="@item.Id">
+                                            @foreach (var image in item.ProductImages.Where(m=>m.IsMain))
                                             {
                                                 <img src="~/assets/img/product/@image.Image" alt="">
                                             }

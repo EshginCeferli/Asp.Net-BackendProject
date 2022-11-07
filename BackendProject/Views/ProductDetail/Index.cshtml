@@ -1,4 +1,4 @@
-﻿
+﻿@model ProductDetailVM
 @{
     ViewData["Title"] = "Product Details";
 }
@@ -34,24 +34,19 @@
                         <div class="row">
                             <div class="col-lg-5">
                                 <div class="product-large-slider mb-20">
-                                    <div class="pro-large-img img-zoom">
-                                        <img src="~/assets/img/product/product-details-img1.jpg" alt="" />
-                                    </div>
-                                    <div class="pro-large-img img-zoom">
-                                        <img src="~/assets/img/product/product-details-img2.jpg" alt="" />
-                                    </div>
-                                    <div class="pro-large-img img-zoom">
-                                        <img src="~/assets/img/product/product-details-img3.jpg" alt="" />
-                                    </div>
-                                    <div class="pro-large-img img-zoom">
-                                        <img src="~/assets/img/product/product-details-img4.jpg" alt="" />
-                                    </div>
+                                    <div class="pro-large-img img-zoom"> 
+                                        
+                                          <img src="~/assets/img/product/@Model.Product.ProductImages.FirstOrDefault().Image" alt="" />                                       
+                                        
+                                    </div>                                    
+                                 
                                 </div>
                                 <div class="pro-nav slick-row-5">
-                                    <div class="pro-nav-thumb"><img src="~/assets/img/product/product-details-img1.jpg" alt="" /></div>
-                                    <div class="pro-nav-thumb"><img src="~/assets/img/product/product-details-img2.jpg" alt="" /></div>
-                                    <div class="pro-nav-thumb"><img src="~/assets/img/product/product-details-img3.jpg" alt="" /></div>
-                                    <div class="pro-nav-thumb"><img src="~/assets/img/product/product-details-img4.jpg" alt="" /></div>
+                                    @foreach (var item in Model.Product.ProductImages)
+                                    {
+                                        <div class="pro-nav-thumb"><img src="~/assets/img/product/@item.Image" alt="" /></div>
+                                    }
+
                                 </div>
                             </div>
                             <div class="col-lg-7">
