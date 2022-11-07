@@ -25,6 +25,8 @@ namespace BackendProject.Data
         public DbSet<Social> Socials { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Tag> Tags { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<TopHeader> TopHeaders { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -42,6 +44,8 @@ namespace BackendProject.Data
             modelBuilder.Entity<Social>().HasQueryFilter(m => !m.IsDeleted);
             modelBuilder.Entity<Category>().HasQueryFilter(m => !m.IsDeleted);
             modelBuilder.Entity<Tag>().HasQueryFilter(m => !m.IsDeleted);
+            modelBuilder.Entity<Contact>().HasQueryFilter(m => !m.IsDeleted);
+            modelBuilder.Entity<TopHeader>().HasQueryFilter(m => !m.IsDeleted);
         }
     }
 }

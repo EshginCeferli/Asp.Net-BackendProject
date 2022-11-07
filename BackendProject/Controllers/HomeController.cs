@@ -34,6 +34,7 @@ namespace BackendProject.Controllers
             IEnumerable<Blog> blogs = await _context.Blogs.ToListAsync();
             BlogHeader blogHeader = await _context.BlogHeaders.FirstOrDefaultAsync();
             IEnumerable<Brand> brands = await _context.Brands.ToListAsync();
+            TopHeader topHeader = await _context.TopHeaders.FirstOrDefaultAsync();
 
             HomeVM homeVM = new HomeVM
             {                             
@@ -44,7 +45,8 @@ namespace BackendProject.Controllers
                 Banners = banners,
                 Blogs = blogs,
                 BlogHeader = blogHeader,
-                Brands = brands
+                Brands = brands,
+                TopHeader = topHeader
                 
             };
             return View(homeVM);

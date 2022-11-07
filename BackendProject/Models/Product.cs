@@ -13,6 +13,7 @@ namespace BackendProject.Models
         [Column(TypeName = "decimal(18,4)")]
         public decimal Discount { get; set; }
         public List<ProductImage> ProductImages { get; set; }
+        public int? SellCount { get; set; }
         //public int ProductHeaderId { get; set; }
         //public ProductHeader ProductHeader { get; set; }
     }

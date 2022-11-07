@@ -288,6 +288,7 @@ C:\Users\ESQIN\OneDrive\İş masası\CloneProjects\Asp.Net-BackendProject\Backen
 C:\Users\ESQIN\OneDrive\İş masası\CloneProjects\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\BackendProject.TagHelpers.input.cache
 C:\Users\ESQIN\OneDrive\İş masası\CloneProjects\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\BackendProject.TagHelpers.output.cache
 C:\Users\ESQIN\OneDrive\İş masası\CloneProjects\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\BackendProject.RazorCoreGenerate.cache
+C:\Users\ESQIN\OneDrive\İş masası\CloneProjects\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Views\BlogDetail\Index.cshtml.g.cs
 C:\Users\ESQIN\OneDrive\İş masası\CloneProjects\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Views\Blog\Index.cshtml.g.cs
 C:\Users\ESQIN\OneDrive\İş masası\CloneProjects\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Index.cshtml.g.cs
 C:\Users\ESQIN\OneDrive\İş masası\CloneProjects\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
