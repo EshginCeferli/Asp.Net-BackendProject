@@ -76,7 +76,7 @@
                             <div class="product-item mb-50">
                                 <div class="product-thumb">
                                     <a href="product-details.html">
-                                        @foreach (var item in product.ProductImages)
+                                        @foreach (var item in product.ProductImages.Where(m=>m.IsMain))
                                         {
                                             <img src="~/assets/img/product/@item.Image" alt="">
                                         }

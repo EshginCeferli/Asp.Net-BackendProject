@@ -19,9 +19,13 @@ namespace BackendProject.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> Index(int id)
+        public async Task<IActionResult> Index(int? id)
         {
-            Blog blog = await _context.Blogs.FindAsync(id); 
+            if (id is null) return BadRequest();
+
+            Blog blog = await _context.Blogs.FindAsync(id);
+
+            if (blog is null) return NotFound();
             
             Widget widget = await _context.Widgets.FirstOrDefaultAsync();
             IEnumerable<Social> socials = await _context.Socials.ToListAsync();

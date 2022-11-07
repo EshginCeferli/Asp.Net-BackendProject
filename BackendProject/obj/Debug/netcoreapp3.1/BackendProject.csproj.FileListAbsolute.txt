@@ -306,3 +306,4 @@ C:\Users\ESQIN\OneDrive\İş masası\CloneProjects\Asp.Net-BackendProject\Backen
 C:\Users\ESQIN\OneDrive\İş masası\CloneProjects\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\BackendProject.pdb
 C:\Users\ESQIN\OneDrive\İş masası\CloneProjects\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\BackendProject.genruntimeconfig.cache
 C:\Users\ESQIN\OneDrive\İş masası\CloneProjects\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\BackendProject.csproj.AssemblyReference.cache
+C:\Users\ESQIN\OneDrive\İş masası\CloneProjects\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Views\ProductDetail\Index.cshtml.g.cs
