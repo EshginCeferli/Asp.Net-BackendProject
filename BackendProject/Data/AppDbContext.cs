@@ -27,6 +27,7 @@ namespace BackendProject.Data
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<TopHeader> TopHeaders { get; set; }
+        public DbSet<RelatedHeader> RelatedHeaders { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -46,6 +47,7 @@ namespace BackendProject.Data
             modelBuilder.Entity<Tag>().HasQueryFilter(m => !m.IsDeleted);
             modelBuilder.Entity<Contact>().HasQueryFilter(m => !m.IsDeleted);
             modelBuilder.Entity<TopHeader>().HasQueryFilter(m => !m.IsDeleted);
+            modelBuilder.Entity<RelatedHeader>().HasQueryFilter(m => !m.IsDeleted);
         }
     }
 }

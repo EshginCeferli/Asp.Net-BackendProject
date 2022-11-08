@@ -25,7 +25,6 @@
                                 </div>
                             </div>
                         }
-
                     </div>
                 </div>
             </div>
@@ -76,7 +75,7 @@
                             <div class="product-item mb-50">
                                 <div class="product-thumb">
                                     <a asp-controller="ProductDetail" asp-action="Index" asp-route-id="@product.Id">
-                                        @foreach (var item in product.ProductImages.Where(m=>m.IsMain))
+                                        @foreach (var item in product.ProductImages.Where(m => m.IsMain))
                                         {
                                             <img src="~/assets/img/product/@item.Image" alt="">
                                         }
@@ -153,13 +152,13 @@
                 <div class="col-xl-8 col-lg-7 col-md-7">
                     <div class="top-seller-carousel slick-row-15 mtn-30">
                         <!-- product item start -->
-                        @foreach (var item in Model.Products.OrderByDescending(m=>m.SellCount))
+                        @foreach (var item in Model.Products.OrderByDescending(m => m.SellCount))
                         {
                             <div class="slide-item">
                                 <div class="pro-item-small mt-30">
                                     <div class="product-thumb">
-                                        <a  asp-controller="ProductDetail" asp-action="Index" asp-route-id="@item.Id">
-                                            @foreach (var image in item.ProductImages.Where(m=>m.IsMain))
+                                        <a asp-controller="ProductDetail" asp-action="Index" asp-route-id="@item.Id">
+                                            @foreach (var image in item.ProductImages.Where(m => m.IsMain))
                                             {
                                                 <img src="~/assets/img/product/@image.Image" alt="">
                                             }
@@ -167,7 +166,7 @@
                                     </div>
                                     <div class="pro-small-content">
                                         <h6 class="product-name">
-                                            <a href="product-details.html">@item.Name</a>
+                                            <a asp-controller="ProductDetail" asp-action="Index" asp-route-id="@item.Id">@item.Name</a>
                                         </h6>
                                         <div class="price-box">
                                             <span class="price-regular">$@((item.Price*item.Discount).ToString("0.##"))</span>
@@ -225,15 +224,15 @@
                                 </div>
                                 <div class="blog-content">
                                     <h5 class="blog-title">
-                                        <a href="blog-details.html">
-                                           @blog.Title
+                                        <a asp-controller="BlogDetail" asp-action="Index" asp-route-id="@blog.Id">
+                                            @blog.Title
                                         </a>
                                     </h5>
                                     <ul class="blog-meta">
                                         <li><span>By: </span>@blog.By</li>
                                         <li><span>On:Db </span>@blog.Date</li>
                                     </ul>
-                                    <a href="blog-details.html" class="read-more">Read More...</a>
+                                    <a asp-controller="BlogDetail" asp-action="Index" asp-route-id="@blog.Id">Read More...</a>
                                 </div>
                             </div>
                         }
