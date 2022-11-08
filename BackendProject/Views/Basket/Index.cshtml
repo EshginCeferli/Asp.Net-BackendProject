@@ -56,7 +56,7 @@
                                                 <div class="pro-qty"><input type="text" value="@item.Count"></div>
                                             </td>
                                             <td class="pro-subtotal"><span>$@item.Total</span></td>
-                                            <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                                            <td class="pro-remove"><a asp-controller="Basket" asp-action="RemoveProduct" asp-route-id="@item.Id"><i class="fa fa-trash-o"></i></a></td>
                                         </tr>
                                         endTotal += item.Total;
                                       

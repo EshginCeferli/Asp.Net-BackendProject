@@ -431,7 +431,6 @@ C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\bin\D
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\BackendProject.csproj.AssemblyReference.cache
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\BackendProject.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\BackendProject.AssemblyInfoInputs.cache
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\BackendProject.AssemblyInfo.cs
@@ -445,6 +444,7 @@ C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\D
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\BackendProject.TagHelpers.input.cache
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\BackendProject.TagHelpers.output.cache
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\BackendProject.RazorCoreGenerate.cache
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Views\Basket\Index.cshtml.g.cs
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Views\BlogDetail\Index.cshtml.g.cs
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Views\Blog\Index.cshtml.g.cs
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Index.cshtml.g.cs
@@ -463,4 +463,3 @@ C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\D
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\BackendProject.dll
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\BackendProject.pdb
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\BackendProject.genruntimeconfig.cache
-C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Views\Basket\Index.cshtml.g.cs

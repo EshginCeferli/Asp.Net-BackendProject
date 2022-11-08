@@ -22,6 +22,10 @@ namespace BackendProject.Controllers
 
         public async Task<IActionResult> Index()
         {
+            if ((Request.Cookies["basket"]) == null)
+            {
+                return RedirectToAction("Index","Home");
+            }
             List<BasketVM> basketItems = JsonConvert.DeserializeObject<List<BasketVM>>(Request.Cookies["basket"]);
             List<BasketDetailVM> basketDetail = new List<BasketDetailVM>();
 
@@ -35,6 +39,7 @@ namespace BackendProject.Controllers
 
                     BasketDetailVM newBasket = new BasketDetailVM
                     {
+                        Id = product.Id,
                         Name = product.Name,
                         Image = product.ProductImages.Where(m => m.IsMain).FirstOrDefault().Image,
                         Price = product.Price,
@@ -47,9 +52,14 @@ namespace BackendProject.Controllers
                 }
                 return View(basketDetail);
             }
-            return RedirectToAction("Index");
+            return View(basketDetail);
 
-           
+
+        }
+
+        public async Task<IActionResult> RemoveProduct(int? id)
+        {
+            return View();
         }
     }
 }
