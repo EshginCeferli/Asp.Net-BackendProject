@@ -25,26 +25,31 @@ namespace BackendProject.Controllers
             List<BasketVM> basketItems = JsonConvert.DeserializeObject<List<BasketVM>>(Request.Cookies["basket"]);
             List<BasketDetailVM> basketDetail = new List<BasketDetailVM>();
 
-            foreach (var item in basketItems)
+            if(basketItems != null)
             {
-                Product product = await _context.Products
-                    .Where(m => m.Id == item.Id && m.IsDeleted == false)
-                    .Include(m => m.ProductImages).FirstOrDefaultAsync();
-
-                BasketDetailVM newBasket = new BasketDetailVM
+                foreach (var item in basketItems)
                 {
-                    Name = product.Name,
-                    Image = product.ProductImages.Where(m => m.IsMain).FirstOrDefault().Image,
-                    Price = product.Price,
-                    Count = item.Count,
-                    Total = product.Price * item.Count
-                };
+                    Product product = await _context.Products
+                        .Where(m => m.Id == item.Id && m.IsDeleted == false)
+                        .Include(m => m.ProductImages).FirstOrDefaultAsync();
 
-                basketDetail.Add(newBasket);
+                    BasketDetailVM newBasket = new BasketDetailVM
+                    {
+                        Name = product.Name,
+                        Image = product.ProductImages.Where(m => m.IsMain).FirstOrDefault().Image,
+                        Price = product.Price,
+                        Count = item.Count,
+                        Total = product.Price * item.Count
+                    };
 
+                    basketDetail.Add(newBasket);
+
+                }
+                return View(basketDetail);
             }
+            return RedirectToAction("Index");
 
-            return View(basketDetail);
+           
         }
     }
 }

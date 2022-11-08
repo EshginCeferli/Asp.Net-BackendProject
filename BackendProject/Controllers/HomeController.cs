@@ -68,9 +68,17 @@ namespace BackendProject.Controllers
 
             UpdateBasket(basket, dbProduct.Id);
 
-            Response.Cookies.Append("basket", JsonConvert.SerializeObject(basket));
-
+            if (basket !=null)
+            {
+                Response.Cookies.Append("basket", JsonConvert.SerializeObject(basket));
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
             return RedirectToAction("Index");
+
+
         }
 
 
