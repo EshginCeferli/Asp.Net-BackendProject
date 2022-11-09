@@ -59,7 +59,14 @@ namespace BackendProject.Controllers
 
         public async Task<IActionResult> RemoveProduct(int? id)
         {
-            return View();
+            List<BasketVM> basketItems = JsonConvert.DeserializeObject<List<BasketVM>>(Request.Cookies["basket"]);
+
+            var delProduct = basketItems.FirstOrDefault(m => m.Id == id);
+            basketItems.Remove(delProduct);
+
+            Response.Cookies.Append("basket", JsonConvert.SerializeObject(basketItems));
+            return RedirectToAction("Index", "Basket");
+           
         }
     }
 }
