@@ -65,7 +65,7 @@ namespace BackendProject.Controllers
 
         }
 
-        public async Task<IActionResult> RemoveProduct(int? id)
+        public  IActionResult RemoveProduct(int? id)
         {
             List<BasketVM> basketItems = JsonConvert.DeserializeObject<List<BasketVM>>(Request.Cookies["basket"]);
 
@@ -73,8 +73,7 @@ namespace BackendProject.Controllers
             basketItems.Remove(delProduct);
 
             Response.Cookies.Append("basket", JsonConvert.SerializeObject(basketItems));
-            return RedirectToAction("Index", "Basket");
-           
+            return RedirectToAction("Index", "Basket");           
         }
     }
 }

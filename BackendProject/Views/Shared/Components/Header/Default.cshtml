@@ -1,5 +1,8 @@
 ﻿@model HeaderVM
- <!-- Start Header Area -->
+@{  decimal endTotal = 0;
+
+}
+<!-- Start Header Area -->
 <header class="header-area">
     <!-- main header start -->
     <div class="main-header d-none d-lg-block">
@@ -433,3 +436,60 @@
     </div>
 </aside>
 <!-- off-canvas menu end -->
+<!-- offcanvas mini cart start -->
+<div class="offcanvas-minicart-wrapper">
+    <div class="minicart-inner">
+        <div class="offcanvas-overlay"></div>
+        <div class="minicart-inner-content">
+            <div class="minicart-close">
+                <i class="ion-android-close"></i>
+            </div>
+            <div class="minicart-content-box">
+                <div class="minicart-item-wrapper">
+                    <ul>
+                        @foreach (var item in Model.BasketDetails)
+                        {
+                            <li class="minicart-item">
+                                <div class="minicart-thumb">
+                                    <a href="product-details.html">
+                                        <img src="~/assets/img/product/@item.Image" alt="product">
+                                    </a>
+                                </div>
+                                <div class="minicart-content">
+                                    <h3 class="product-name">
+                                        <a href="product-details.html">@item.Name</a>
+                                    </h3>
+                                    <p>
+                                        <span class="cart-quantity">@item.Count <strong>&times;</strong></span>
+                                        <span class="cart-price">$@item.Price</span>
+                                    </p>
+                                </div>
+                                <a asp-controller="Basket" asp-action="RemoveProduct" asp-route-id="@item.Id" class="minicart-remove"><i class="ion-android-close"></i></a>
+                            </li>
+                            endTotal += item.Total;
+                        }
+
+                    </ul>
+                </div>
+
+                <div class="minicart-pricing-box">
+                    <ul>
+
+                        <li>
+                            <span>sub-total</span>
+                            <span><strong>$@endTotal</strong></span>
+                        </li>
+
+
+                    </ul>
+                </div>
+
+                <div class="minicart-button">
+                    <a asp-controller="Basket" asp-action="Index"><i class="fa fa-shopping-cart"></i> view cart</a>
+                    <a href="cart.html"><i class="fa fa-share"></i> checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- offcanvas mini cart end -->

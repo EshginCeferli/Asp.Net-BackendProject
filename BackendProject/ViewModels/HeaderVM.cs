@@ -9,5 +9,6 @@ namespace BackendProject.ViewModels
     {
         public int Count { get; set; }
         public Dictionary<string,string> Settings { get; set; }
+        public List<BasketDetailVM> BasketDetails { get; set; }
     }
 }
