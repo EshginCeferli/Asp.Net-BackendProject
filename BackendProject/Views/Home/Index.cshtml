@@ -82,6 +82,7 @@
                                     </a>
                                 </div>
                                 <div class="product-content">
+                                    <input type="hidden" class="product-id" value="@product.Id" />
                                     <h5 class="product-name">
                                         <a href="product-details.html">@product.Name</a>
                                     </h5>
@@ -91,14 +92,14 @@
                                     </div>
                                     <div class="product-action-link">
                                         <a href="#" data-toggle="tooltip" title="Wishlist"><i class="ion-android-favorite-outline"></i></a>
-                                        <a asp-controller="Home" asp-action="AddBasket" asp-route-id="@product.Id" data-toggle="tooltip" title="Add To Cart"><i class="ion-bag"></i></a>
+                                        <a asp-controller="Home" asp-action="AddBasket" asp-route-id="@product.Id" class="add-to-cart" data-toggle="tooltip" title="Add To Cart"><i class="ion-bag"></i></a>
                                         <a href="#" data-toggle="modal" data-target="#quick_view">
                                             <span data-toggle="tooltip"
                                                   title="Quick View"><i class="ion-ios-eye-outline"></i></span>
                                         </a>
                                     </div>
                                 </div>
-                            </div>
+                                </div>
                         }
 
                     </div>

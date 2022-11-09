@@ -29,7 +29,10 @@ namespace BackendProject.Controllers
             List<BasketVM> basketItems = JsonConvert.DeserializeObject<List<BasketVM>>(Request.Cookies["basket"]);
             List<BasketDetailVM> basketDetail = new List<BasketDetailVM>();
 
-            if(basketItems != null)
+
+            int count = 0;
+            
+            if (basketItems != null)
             {
                 foreach (var item in basketItems)
                 {
@@ -44,14 +47,19 @@ namespace BackendProject.Controllers
                         Image = product.ProductImages.Where(m => m.IsMain).FirstOrDefault().Image,
                         Price = product.Price,
                         Count = item.Count,
-                        Total = product.Price * item.Count
+                        Total = product.Price * item.Count,                     
+                        
                     };
+                    count += item.Count;
 
+                                       
                     basketDetail.Add(newBasket);
-
                 }
-                return View(basketDetail);
+                ViewData["Count"] = count;
+                return View(basketDetail);                               
             }
+            
+           
             return View(basketDetail);
 
 

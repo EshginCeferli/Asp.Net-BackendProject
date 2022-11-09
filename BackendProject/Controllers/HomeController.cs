@@ -64,11 +64,13 @@ namespace BackendProject.Controllers
 
             if (dbProduct == null) return NotFound();
 
-            List<BasketVM> basket = GetBasket();
+            List<BasketVM> basket = GetBasket();       
 
             UpdateBasket(basket, dbProduct.Id);
 
             Response.Cookies.Append("basket", JsonConvert.SerializeObject(basket));
+          
+
 
             return RedirectToAction("Index");
         }
