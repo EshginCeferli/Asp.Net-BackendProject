@@ -451,6 +451,7 @@ C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\D
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Views\ProductDetail\Index.cshtml.g.cs
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Header\Default.cshtml.g.cs
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Views\Shop\Index.cshtml.g.cs
