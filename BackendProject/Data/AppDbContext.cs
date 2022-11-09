@@ -1,4 +1,5 @@
 ﻿using BackendProject.Models;
+using EntityFrameworkProject.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,7 @@ namespace BackendProject.Data
         public DbSet<RelatedHeader> RelatedHeaders { get; set; }
         public DbSet<Color> Colors { get; set; }
         public DbSet<Size> Sizes { get; set; }
+        public DbSet<Setting> Settings { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -52,7 +54,7 @@ namespace BackendProject.Data
             modelBuilder.Entity<RelatedHeader>().HasQueryFilter(m => !m.IsDeleted);
             modelBuilder.Entity<Color>().HasQueryFilter(m => !m.IsDeleted);
             modelBuilder.Entity<Size>().HasQueryFilter(m => !m.IsDeleted);
-
+            modelBuilder.Entity<Setting>().HasQueryFilter(m => !m.IsDeleted);
         }
     }
 }
