@@ -9,7 +9,7 @@ namespace BackendProject.ViewModels
     public class FooterVM
     {
         public IEnumerable<Social> Socials { get; set; }
-        public IEnumerable<Contact> Contacts { get; set; }
+        public Contact Contact { get; set; }
         public IEnumerable<Category> Categories { get; set; }
 
     }

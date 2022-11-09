@@ -20,17 +20,17 @@ namespace BackendProject.ViewComponents
         }
 
         public async Task<IViewComponentResult> InvokeAsync()
-        {         
+        {
 
             IEnumerable<Social> socials = await _context.Socials.ToListAsync();
-            IEnumerable<Contact> contacts = await _context.Contacts.ToListAsync();
+            Contact contact = await _context.Contacts.FirstOrDefaultAsync();
             IEnumerable<Category> categories = await _context.Categories.ToListAsync();
 
 
             FooterVM footerVM = new FooterVM
             {
                 Socials = socials,
-                Contacts = contacts,
+                Contact = contact,
                 Categories = categories
             };
 
