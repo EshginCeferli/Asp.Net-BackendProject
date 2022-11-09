@@ -9,14 +9,14 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="welcome-message">
-                            <p>Welcome to Juan online store</p>
+                            <p>@Model.Settings["welcome"]</p>
                         </div>
                     </div>
                     <div class="col-lg-6 text-right">
                         <div class="header-top-settings">
                             <ul class="nav align-items-center justify-content-end">
                                 <li class="curreny-wrap">
-                                    $ Dollar (US)
+                                    $ @Model.Settings["currency"]
                                     <i class="fa fa-angle-down"></i>
                                     <ul class="dropdown-list curreny-list">
                                         <li><a href="#">$ usd</a></li>
@@ -24,7 +24,7 @@
                                     </ul>
                                 </li>
                                 <li class="language">
-                                    <img src="~/assets/img/icon/en.png" alt="flag"> English
+                                    <img src="~/assets/img/icon/@Model.Settings["flag"]" alt="flag"> @Model.Settings["language"]
                                     <i class="fa fa-angle-down"></i>
                                     <ul class="dropdown-list">
                                         <li><a href="#"><img src="~/assets/img/icon/en.png" alt="flag"> english</a></li>
@@ -46,7 +46,7 @@
                     <div class="col-lg-2">
                         <div class="logo">
                             <a asp-controller="Home" asp-action="Index">
-                                <img src="~/assets/img/logo/logo.png" alt="">
+                                <img src="~/assets/img/logo/@Model.Settings["logo"]" alt="">
                             </a>
                         </div>
                     </div>
@@ -184,7 +184,7 @@
                                     <li>
                                         <a href="#" class="minicart-btn">
                                             <i class="ion-bag"></i>
-                                            <div class="notification">@ViewData["Count"]</div>
+                                            <div class="notification">@Model.Count</div>
                                         </a>
                                     </li>
                                 </ul>
