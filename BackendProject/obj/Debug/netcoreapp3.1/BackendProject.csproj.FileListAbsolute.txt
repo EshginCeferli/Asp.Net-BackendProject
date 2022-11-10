@@ -473,3 +473,8 @@ C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\D
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\BackendProject.pdb
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\BackendProject.genruntimeconfig.cache
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\BackendProject.csproj.AssemblyReference.cache
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Shared\_AdminLayout.cshtml.g.cs
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Shared\_ValidationPartial.cshtml.g.cs
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Dashboard\Index.cshtml.g.cs
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\_ViewImports.cshtml.g.cs
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\_ViewStart.cshtml.g.cs
