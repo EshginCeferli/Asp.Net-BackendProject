@@ -1,0 +1,78 @@
+﻿@model RegisterVM
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="login-register-wrapper section-padding">
+    <div class="container">
+        <div class="member-area-from-wrap">
+            <div class="row justify-content-center">
+                
+                <!-- Register Content Start -->
+                <div class="col-lg-6">
+                    <div class="login-reg-form-wrap signup-form">
+                        <h2>Singup Form</h2>
+                        <div class="text-danger mb-2" asp-validation-summary="All"></div>
+                        <form asp-controller="Account" asp-action="Register" method="post" enctype="multipart/form-data">
+
+                            <div class="single-input-item">
+                                <label asp-for="Fullname" class="form-label">Full name</label>
+                                <input placeholder="Full Name" asp-for="Fullname" />
+                                <span class="text-danger" asp-validation-for="Fullname"></span>
+                            </div>
+
+                            <div class="single-input-item">
+                                <label asp-for="Username" class="form-label">Username</label>
+                                <input placeholder="Username" asp-for="Username" />
+                                <span class="text-danger" asp-validation-for="Username"></span>
+                            </div>
+
+                            <div class="single-input-item">
+                                <label asp-for="Email" class="form-label">Email</label>
+                                <input placeholder="Enter your Email" asp-for="Email" />
+                                <span class="text-danger" asp-validation-for="Email"></span>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="single-input-item">
+                                        <label asp-for="Password" class="form-label">Password</label>
+                                        <input placeholder="Enter your Password" asp-for="Password" />
+                                        <span class="text-danger" asp-validation-for="Password"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="single-input-item">
+                                        <label asp-for="ConfirmPassword" class="form-label">Confirm Password</label>
+                                        <input placeholder="Repeat your Password" asp-for="ConfirmPassword" />
+                                        <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            @*<div class="single-input-item">
+                                    <div class="login-reg-form-meta">
+                                        <div class="remember-meta">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="subnewsletter">
+                                                <label class="custom-control-label" for="subnewsletter">Subscribe Our Newsletter</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>*@
+                            <div class="single-input-item">
+                                <button type="submit" class="btn">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Register Content End -->
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js" integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+}

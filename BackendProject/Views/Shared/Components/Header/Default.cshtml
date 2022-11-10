@@ -179,9 +179,9 @@
                                             <i class="ion-ios-gear-outline"></i>
                                         </a>
                                         <ul class="dropdown-list">
-                                            <li><a href="login-register.html">login</a></li>
-                                            <li><a href="login-register.html">register</a></li>
-                                            <li><a href="my-account.html">my account</a></li>
+                                            <li><a asp-controller="Account" asp-action="Login">login</a></li>
+                                            <li><a asp-controller="Account" asp-action="Register">register</a></li>
+                                            <li><a asp-controller="Account" asp-action="Logout">Logout</a></li>
                                         </ul>
                                     </li>
                                     <li>
@@ -476,7 +476,7 @@
                     <ul>
 
                         <li>
-                            <span>sub-total</span>
+                            <span>Total</span>
                             <span><strong>$@endTotal</strong></span>
                         </li>
 
@@ -486,7 +486,7 @@
 
                 <div class="minicart-button">
                     <a asp-controller="Basket" asp-action="Index"><i class="fa fa-shopping-cart"></i> view cart</a>
-                    <a href="cart.html"><i class="fa fa-share"></i> checkout</a>
+                    <a asp-controller="Basket" asp-action="Index"><i class="fa fa-share"></i> checkout</a>
                 </div>
             </div>
         </div>
