@@ -48,7 +48,7 @@ namespace BackendProject
 
                 opt.User.RequireUniqueEmail = true;
 
-                opt.SignIn.RequireConfirmedEmail = true;
+                
 
 
                 opt.Lockout.MaxFailedAccessAttempts = 3;
