@@ -40,8 +40,15 @@ using BackendProject.ViewModels.RelatedHeaderViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\Areas\AdminArea\Views\_ViewImports.cshtml"
+using BackendProject.ViewModels.SliderViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c6629f0365e50cb1b79e567476224b698957b8f0", @"/Areas/AdminArea/Views/ProductHeader/Detail.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fede50f129cf2428acac80adeb71c8ecbb1f99ca", @"/Areas/AdminArea/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"256dc6f97d4740a28f2218a6ed89024032c27a06", @"/Areas/AdminArea/Views/_ViewImports.cshtml")]
     public class Areas_AdminArea_Views_ProductHeader_Detail : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ProductHeaderDetailVM>
     {
         #pragma warning disable 1998
