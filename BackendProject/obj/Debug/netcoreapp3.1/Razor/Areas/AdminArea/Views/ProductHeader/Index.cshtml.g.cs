@@ -47,8 +47,22 @@ using BackendProject.ViewModels.SliderViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\Areas\AdminArea\Views\_ViewImports.cshtml"
+using BackendProject.ViewModels.LinkCreateViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 7 "C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\Areas\AdminArea\Views\_ViewImports.cshtml"
+using BackendProject.ViewModels.BannerViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4ffb90156719fbf77746bb9994a86bb94dfac807", @"/Areas/AdminArea/Views/ProductHeader/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"256dc6f97d4740a28f2218a6ed89024032c27a06", @"/Areas/AdminArea/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"47a3754e2872c5b29e54ae817d281da52cb7c23f", @"/Areas/AdminArea/Views/_ViewImports.cshtml")]
     public class Areas_AdminArea_Views_ProductHeader_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<ProductHeader>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Create", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -95,7 +109,7 @@ using BackendProject.ViewModels.SliderViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<h1>Index</h1>\r\n\r\n<div class=\"container-fluid my-3 mx-3\">\r\n    <div class=\"table-responsive pt-3\">\r\n        <div class=\"create-btn mb-3\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ffb90156719fbf77746bb9994a86bb94dfac8077697", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ffb90156719fbf77746bb9994a86bb94dfac8078191", async() => {
                 WriteLiteral("<i class=\"fa-solid fa-plus\"></i>");
             }
             );
@@ -156,7 +170,7 @@ using BackendProject.ViewModels.SliderViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                        </td>\r\n\r\n\r\n                        <td style=\"text-align: center;\">\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ffb90156719fbf77746bb9994a86bb94dfac80710654", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ffb90156719fbf77746bb9994a86bb94dfac80711148", async() => {
                 WriteLiteral("<i class=\"mdi mdi-information mx-0\"></i>");
             }
             );
@@ -188,7 +202,7 @@ using BackendProject.ViewModels.SliderViewModels;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ffb90156719fbf77746bb9994a86bb94dfac80713015", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ffb90156719fbf77746bb9994a86bb94dfac80713509", async() => {
                 WriteLiteral("<i class=\"mdi mdi-table-edit\"></i>");
             }
             );
@@ -220,7 +234,7 @@ using BackendProject.ViewModels.SliderViewModels;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ffb90156719fbf77746bb9994a86bb94dfac80715368", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ffb90156719fbf77746bb9994a86bb94dfac80715862", async() => {
                 WriteLiteral("\r\n                                <button type=\"submit\" class=\"btn btn-danger\"><i class=\"mdi mdi-delete-forever\"></i></button>\r\n                            ");
             }
             );

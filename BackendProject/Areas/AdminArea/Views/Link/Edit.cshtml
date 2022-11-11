@@ -1,0 +1,30 @@
+﻿@model LinkEditVM
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container-fluid mx-5 my-3">
+    <h3>Slider image</h3>
+    <form asp-action="Edit" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <input class="form-control" asp-for="Photo">
+            <span class="text-danger" asp-validation-for="Photo"></span>
+
+            <label for="header">Title</label>
+            <input class="form-control" asp-for="Title">
+            <span class="text-danger" asp-validation-for="Title"></span>
+
+            <label for="title">Add color name you want</label>
+            <input class="form-control" asp-for="Color">
+            <span class="text-danger" asp-validation-for="Color"></span>
+
+            <label for="description">Description</label>
+            <input class="form-control" asp-for="Description">
+            <span class="text-danger" asp-validation-for="Description"></span>
+        </div>
+        <a class="btn btn-primary" asp-controller="Link" asp-action="Index">Back</a>
+        <a class="btn btn-warning" asp-controller="Link" asp-action="Create">Reset</a>
+        <button type="submit" class="btn btn-primary">Edit</button>
+    </form>
+</div>

@@ -1,0 +1,28 @@
+﻿@model Banner
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="container-fluid mx-5 my-3">
+    >
+    <form asp-action="Edit" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <input class="form-control" asp-for="Photo">
+            <span class="text-danger" asp-validation-for="Photo"></span>
+
+            <label for="header">Title</label>
+            <input class="form-control" asp-for="Title">
+            <span class="text-danger" asp-validation-for="Title"></span>
+
+            <label for="title">Subtitle</label>
+            <input class="form-control" asp-for="Subtitle">
+            <span class="text-danger" asp-validation-for="Subtitle"></span>
+
+        </div>
+        <a class="btn btn-primary" asp-controller="Banner" asp-action="Index">Back</a>
+        <a class="btn btn-warning" asp-controller="Banner" asp-action="Create">Reset</a>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+

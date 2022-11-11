@@ -1,12 +1,12 @@
 ﻿@model Slider
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Update";
 }
 
 <div class="container-fluid mx-5 my-3">
     <h3>Slider image</h3>
-    <form asp-action="Create" method="post" enctype="multipart/form-data">
+    <form asp-action="Edit" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <input class="form-control" asp-for="Photo">
             <span class="text-danger" asp-validation-for="Photo"></span>
@@ -25,7 +25,7 @@
         </div>
         <a class="btn btn-primary" asp-controller="Slider" asp-action="Index">Back</a>
         <a class="btn btn-warning" asp-controller="Slider" asp-action="Create">Reset</a>
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary">Update</button>
     </form>
 </div>
 

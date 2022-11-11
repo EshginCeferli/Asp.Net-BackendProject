@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,5 +15,6 @@ namespace BackendProject.Models
         public string ArticleHeader { get; set; }
         public string ArticleQuote { get; set; }
         public string ArticleContext { get; set; }
+        public IFormFile Photo { get; set; }
     }
 }

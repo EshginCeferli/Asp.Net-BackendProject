@@ -25,7 +25,7 @@ namespace BackendProject.Areas.AdminArea.Controllers
             _context = context;
             _env = env;
         }
-        public async Task<IActionResult> Index() => View(await _context.Sliders.Where(m => !m.IsDeleted).ToListAsync());
+        public async Task<IActionResult> Index() => View(await _context.Sliders.ToListAsync());
 
         [HttpGet]
         public IActionResult Create() => View();
@@ -138,13 +138,13 @@ namespace BackendProject.Areas.AdminArea.Controllers
                 return View(dbSlider);
             }
 
-            string oldPath = Helper.GetFilePath(_env.WebRootPath, "img", dbSlider.Image);
+            string oldPath = Helper.GetFilePath(_env.WebRootPath, "assets/img/slider", dbSlider.Image);
 
             Helper.DeleteFile(oldPath);
 
             string fileName = Guid.NewGuid().ToString() + "_" + slider.Photo.FileName;
 
-            string newPath = Helper.GetFilePath(_env.WebRootPath, "img", fileName);
+            string newPath = Helper.GetFilePath(_env.WebRootPath, "assets/img/slider", fileName);
 
 
             using (FileStream stream = new FileStream(newPath, FileMode.Create))
