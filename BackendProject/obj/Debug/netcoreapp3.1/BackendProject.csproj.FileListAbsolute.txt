@@ -502,3 +502,7 @@ C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\D
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Banner\Edit.cshtml.g.cs
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Banner\Detail.cshtml.g.cs
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Slider\Detail.cshtml.g.cs
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Blog\Create.cshtml.g.cs
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Blog\Detail.cshtml.g.cs
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Blog\Edit.cshtml.g.cs
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Blog\Index.cshtml.g.cs

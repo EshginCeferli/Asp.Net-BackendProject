@@ -1,9 +1,12 @@
 ﻿using BackendProject.Data;
+using BackendProject.Helpers;
+using BackendProject.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -29,41 +32,44 @@ namespace BackendProject.Areas.AdminArea.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(SliderCreateVM slider)
+        public async Task<IActionResult> Create(Blog blog)
         {
             if (!ModelState.IsValid) return View();
 
 
-            if (!slider.Photo.CheckFileType("image/"))
+            if (!blog.Photo.CheckFileType("image/"))
             {
                 ModelState.AddModelError("Photo", "Please choose correct image type");
                 return View();
             }
 
 
-            if (!slider.Photo.CheckFileSize(200))
+            if (!blog.Photo.CheckFileSize(200))
             {
                 ModelState.AddModelError("Photo", "Please choose correct image size");
                 return View();
             }
 
 
-            string fileName = Guid.NewGuid().ToString() + "_" + slider.Photo.FileName;
+            string fileName = Guid.NewGuid().ToString() + "_" + blog.Photo.FileName;
 
-            string path = Helper.GetFilePath(_env.WebRootPath, "assets/img/slider", fileName);
+            string path = Helper.GetFilePath(_env.WebRootPath, "assets/img/blog", fileName);
 
-            await Helper.SaveFile(path, slider.Photo);
+            await Helper.SaveFile(path, blog.Photo);
 
-            Slider newSlider = new Slider
+            Blog newBlog = new Blog
             {
                 Image = fileName,
-                Title = slider.Title,
-                Header = slider.Description,
-                Description = slider.Description
+                Title = blog.Title,
+                By = blog.By,
+                ArticleHeader = blog.ArticleHeader,
+                ArticleContext = blog.ArticleContext,
+                ArticleQuote = blog.ArticleQuote,
+                Date = DateTime.Now.ToString()
             };
 
 
-            await _context.Sliders.AddAsync(newSlider);
+            await _context.Blogs.AddAsync(newBlog);
 
 
             await _context.SaveChangesAsync();
@@ -74,11 +80,11 @@ namespace BackendProject.Areas.AdminArea.Controllers
 
         public async Task<IActionResult> Delete(int id)
         {
-            Slider slider = await GetByIdAsync(id);
+            Blog blog = await GetByIdAsync(id);
 
-            if (slider == null) return NotFound();
+            if (blog == null) return NotFound();
 
-            //string path = Helper.GetFilePath(_env.WebRootPath, "img", slider.Image);
+            //string path = Helper.GetFilePath(_env.WebRootPath, "img", blog.Image);
 
             //if (System.IO.File.Exists(path))
             //{
@@ -87,10 +93,10 @@ namespace BackendProject.Areas.AdminArea.Controllers
 
             //Helper.DeleteFile(path);
 
-            //_context.Sliders.Remove(slider);
+            //_context.Blogs.Remove(blog);
 
             //await _context.SaveChangesAsync();
-            slider.IsDeleted = true;
+            blog.IsDeleted = true;
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
@@ -102,56 +108,59 @@ namespace BackendProject.Areas.AdminArea.Controllers
         {
             if (id is null) return BadRequest();
 
-            Slider slider = await GetByIdAsync((int)id);
+            Blog blog = await GetByIdAsync((int)id);
 
-            if (slider == null) return NotFound();
+            if (blog == null) return NotFound();
 
-            return View(slider);
+            return View(blog);
 
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int? id, Slider slider)
+        public async Task<IActionResult> Edit(int? id, Blog blog)
         {
             if (id is null) return BadRequest();
 
-            if (slider.Photo == null) return RedirectToAction(nameof(Index));
+            if (blog.Photo == null) return RedirectToAction(nameof(Index));
 
-            var dbSlider = await GetByIdAsync((int)id);
+            var dbBlog = await GetByIdAsync((int)id);
 
-            if (dbSlider == null) return NotFound();
+            if (dbBlog == null) return NotFound();
 
-            if (!slider.Photo.CheckFileType("image/"))
+            if (!blog.Photo.CheckFileType("image/"))
             {
                 ModelState.AddModelError("Photo", "Please choose correct image type");
-                return View(dbSlider);
+                return View(dbBlog);
             }
 
-            if (!slider.Photo.CheckFileSize(200))
+            if (!blog.Photo.CheckFileSize(200))
             {
                 ModelState.AddModelError("Photo", "Please choose correct image size");
-                return View(dbSlider);
+                return View(dbBlog);
             }
 
-            string oldPath = Helper.GetFilePath(_env.WebRootPath, "assets/img/slider", dbSlider.Image);
+            string oldPath = Helper.GetFilePath(_env.WebRootPath, "assets/img/blog", dbBlog.Image);
 
             Helper.DeleteFile(oldPath);
 
-            string fileName = Guid.NewGuid().ToString() + "_" + slider.Photo.FileName;
+            string fileName = Guid.NewGuid().ToString() + "_" + blog.Photo.FileName;
 
-            string newPath = Helper.GetFilePath(_env.WebRootPath, "assets/img/slider", fileName);
+            string newPath = Helper.GetFilePath(_env.WebRootPath, "assets/img/blog", fileName);
 
 
             using (FileStream stream = new FileStream(newPath, FileMode.Create))
             {
-                await slider.Photo.CopyToAsync(stream);
+                await blog.Photo.CopyToAsync(stream);
             }
 
-            dbSlider.Image = fileName;
-            dbSlider.Title = slider.Title;
-            dbSlider.Header = slider.Header;
-            dbSlider.Description = slider.Description;
+            dbBlog.Image = fileName;
+            dbBlog.Title = blog.Title;
+            dbBlog.By = blog.By;
+            dbBlog.ArticleHeader = blog.ArticleHeader;
+            dbBlog.ArticleContext = blog.ArticleContext;
+            dbBlog.ArticleQuote = blog.ArticleQuote;
+            dbBlog.Date = DateTime.Now.ToString();
 
             await _context.SaveChangesAsync();
 
@@ -164,18 +173,18 @@ namespace BackendProject.Areas.AdminArea.Controllers
         {
             if (id is null) return BadRequest();
 
-            Slider slider = await GetByIdAsync((int)id);
+            Blog blog = await GetByIdAsync((int)id);
 
-            if (slider == null) return NotFound();
+            if (blog == null) return NotFound();
 
-            return View(slider);
+            return View(blog);
 
         }
 
 
-        private async Task<Slider> GetByIdAsync(int id)
+        private async Task<Blog> GetByIdAsync(int id)
         {
-            return await _context.Sliders.FindAsync(id);
+            return await _context.Blogs.FindAsync(id);
         }
 
     }
