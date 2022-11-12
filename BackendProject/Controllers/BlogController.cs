@@ -1,4 +1,5 @@
 ﻿using BackendProject.Data;
+using BackendProject.Helpers;
 using BackendProject.Models;
 using BackendProject.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -18,24 +19,48 @@ namespace BackendProject.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1, int take = 5)
         {
-            IEnumerable<Blog> blogs = await _context.Blogs.ToListAsync();
+            IEnumerable<Blog> blogs = await _context.Blogs
+                .Skip((page * take) - take)
+                .Take(take)
+                .ToListAsync();
             Widget widget = await _context.Widgets.FirstOrDefaultAsync();
             IEnumerable<Social> socials = await _context.Socials.ToListAsync();
             IEnumerable<Category> categories = await _context.Categories.ToListAsync();
             IEnumerable<Tag> tags = await _context.Tags.ToListAsync();
-      
 
-            BlogVM blogVM = new BlogVM {
-                Blogs = blogs,
-                Widget = widget,
-                Socials =socials,
-                Categories = categories,
-                Tags= tags,             
+            ViewBag.take = take;
+
+            List<BlogVM> blogVMs = new List<BlogVM>
+            {
+                new BlogVM
+                {
+                    Blogs = blogs,
+                    Categories = categories,
+                    Socials = socials,
+                    Tags = tags,
+                    Widget = widget
+                }
             };
+            var mapDatas = blogVMs;
 
-            return View(blogVM);
+            int count = await GetPageCount(take);
+
+            Paginate<BlogVM> result = new Paginate<BlogVM>(mapDatas, page, count);
+
+            return View(result);
         }
+
+        
+
+        private async Task<int> GetPageCount(int take)
+        {
+            int blogCount = await _context.Blogs.CountAsync();
+
+            return (int)Math.Ceiling((decimal)blogCount / take);
+        }
+
+       
     }
 }

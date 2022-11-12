@@ -34,6 +34,10 @@ body {
   font-size: 16px;
   font-family: "Open Sans", sans-serif; }
 
+.paginate-disable{
+    pointer-events :none;
+}
+
 a {
   -webkit-transition: 0.4s;
   -o-transition: 0.4s;

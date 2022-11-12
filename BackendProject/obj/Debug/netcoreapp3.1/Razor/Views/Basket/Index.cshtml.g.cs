@@ -47,8 +47,15 @@ using BackendProject.ViewModels.TopHeaderViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\Views\_ViewImports.cshtml"
+using BackendProject.Helpers;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"daf945049c459bbc57d07dc58ebdd7e1dcfc65f6", @"/Views/Basket/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"03dd4307b73cf70a2c34a030cf49d27838a5a477", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d09cfb617f9e0a56c42dbb8b012b00ffd971a359", @"/Views/_ViewImports.cshtml")]
     public class Views_Basket_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<BasketDetailVM>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Home", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -107,7 +114,7 @@ using BackendProject.ViewModels.TopHeaderViewModels;
                             <h1 class=""breadcrumb-title"">Cart</h1>
                             <ul class=""breadcrumb"">
                                 <li class=""breadcrumb-item"">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "daf945049c459bbc57d07dc58ebdd7e1dcfc65f67123", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "daf945049c459bbc57d07dc58ebdd7e1dcfc65f67332", async() => {
 #nullable restore
 #line 19 "C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\Views\Basket\Index.cshtml"
                                                                                                    Write(ViewData["Count"]);
@@ -216,7 +223,7 @@ WriteAttributeValue("", 2807, item.Count, 2807, 11, false);
 #line hidden
 #nullable disable
             WriteLiteral("</span></td>\r\n                                            <td class=\"pro-remove\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "daf945049c459bbc57d07dc58ebdd7e1dcfc65f613046", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "daf945049c459bbc57d07dc58ebdd7e1dcfc65f613255", async() => {
                 WriteLiteral("<i class=\"fa fa-trash-o\"></i>");
             }
             );
@@ -266,7 +273,7 @@ WriteAttributeValue("", 2807, item.Count, 2807, 11, false);
                         <div class=""cart-update-option d-block d-md-flex justify-content-between"">
                             <div class=""apply-coupon-wrapper"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "daf945049c459bbc57d07dc58ebdd7e1dcfc65f616305", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "daf945049c459bbc57d07dc58ebdd7e1dcfc65f616514", async() => {
                 WriteLiteral("\r\n                                    <input type=\"text\" placeholder=\"Enter Your Coupon Code\" required />\r\n                                    <button class=\"btn\">Apply Coupon</button>\r\n                                ");
             }
             );
