@@ -19,7 +19,7 @@ namespace BackendProject.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> Index(int page = 1, int take = 5)
+        public async Task<IActionResult> Index(int page = 1, int take = 6)
         {
             IEnumerable<Blog> blogs = await _context.Blogs
                 .Skip((page * take) - take)
