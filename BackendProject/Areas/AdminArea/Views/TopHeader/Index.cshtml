@@ -1,4 +1,4 @@
-﻿@model List<TopHeader>
+﻿@model TopHeader
 @{
     ViewData["Title"] = "Index";
 }
@@ -26,28 +26,24 @@
                     </th>
                 </tr>
             </thead>
-            <tbody>
-                @foreach (var topHeader in Model)
-                {
+            <tbody>             
                     <tr>
                         <td>
-                            @Html.Raw(topHeader.Title)
+                            @Html.Raw(Model.Title)
                         </td>
                         <td>
-                            @Html.Raw(topHeader.Description)
+                            @Html.Raw(Model.Description)
                         </td>
 
 
                         <td style="text-align: center;">
-                            <a asp-action="Detail" asp-route-id="@topHeader.Id" class="btn btn-info"><i class="mdi mdi-information mx-0"></i></a>
-                            <a asp-action="Edit" asp-route-id="@topHeader.Id" class="btn btn-primary"><i class="mdi mdi-table-edit"></i></a>
-                            <form style="display: inline-block;" asp-action="Delete" asp-route-id="@topHeader.Id" method="post">
+                            <a asp-action="Detail" asp-route-id="@Model.Id" class="btn btn-info"><i class="mdi mdi-information mx-0"></i></a>
+                            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary"><i class="mdi mdi-table-edit"></i></a>
+                            <form style="display: inline-block;" asp-action="Delete" asp-route-id="@Model.Id" method="post">
                                 <button type="submit" class="btn btn-danger"><i class="mdi mdi-delete-forever"></i></button>
                             </form>
                         </td>
-                    </tr>
-
-                }
+                    </tr>               
 
 
             </tbody>

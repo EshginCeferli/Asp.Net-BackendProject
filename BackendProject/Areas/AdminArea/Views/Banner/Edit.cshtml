@@ -8,6 +8,7 @@
     >
     <form asp-action="Edit" method="post" enctype="multipart/form-data">
         <div class="form-group">
+            <div> <img src="~/assets/img/banner/@Model.Image" alt="Alternate Text" /></div>
             <input class="form-control" asp-for="Photo">
             <span class="text-danger" asp-validation-for="Photo"></span>
 

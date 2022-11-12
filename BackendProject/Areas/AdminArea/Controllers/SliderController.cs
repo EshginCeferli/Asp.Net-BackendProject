@@ -33,7 +33,7 @@ namespace BackendProject.Areas.AdminArea.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(SliderCreateVM slider)
+        public async Task<IActionResult> Create(Slider slider)
         {
             if (!ModelState.IsValid) return View();
 
@@ -82,24 +82,11 @@ namespace BackendProject.Areas.AdminArea.Controllers
 
             if (slider == null) return NotFound();
 
-            //string path = Helper.GetFilePath(_env.WebRootPath, "img", slider.Image);
-
-            //if (System.IO.File.Exists(path))
-            //{
-            //    System.IO.File.Delete(path);
-            //}
-
-            //Helper.DeleteFile(path);
-
-            //_context.Sliders.Remove(slider);
-
-            //await _context.SaveChangesAsync();
             slider.IsDeleted = true;
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
 
         [HttpGet]
         public async Task<IActionResult> Edit(int? id)
@@ -161,21 +148,6 @@ namespace BackendProject.Areas.AdminArea.Controllers
 
             return RedirectToAction(nameof(Index));
         }
-
-
-        [HttpGet]
-        public async Task<IActionResult> Detail(int? id)
-        {
-            if (id is null) return BadRequest();
-
-            Slider slider = await GetByIdAsync((int)id);
-
-            if (slider == null) return NotFound();
-
-            return View(slider);
-
-        }
-
 
         private async Task<Slider> GetByIdAsync(int id)
         {

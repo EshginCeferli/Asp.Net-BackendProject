@@ -22,8 +22,8 @@ namespace BackendProject.Areas.AdminArea.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            IEnumerable<ProductHeader> productHeaders = await _context.ProductHeaders.ToListAsync();
-            return View(productHeaders);
+            ProductHeader productHeader = await _context.ProductHeaders.FirstOrDefaultAsync();
+            return View(productHeader);
         }
 
         [HttpGet]

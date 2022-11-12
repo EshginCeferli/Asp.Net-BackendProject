@@ -82,18 +82,7 @@ namespace BackendProject.Areas.AdminArea.Controllers
 
             if (banner == null) return NotFound();
 
-            //string path = Helper.GetFilePath(_env.WebRootPath, "img", banner.Image);
-
-            //if (System.IO.File.Exists(path))
-            //{
-            //    System.IO.File.Delete(path);
-            //}
-
-            //Helper.DeleteFile(path);
-
-            //_context.Banners.Remove(banner);
-
-            //await _context.SaveChangesAsync();
+           
             banner.IsDeleted = true;
 
             await _context.SaveChangesAsync();

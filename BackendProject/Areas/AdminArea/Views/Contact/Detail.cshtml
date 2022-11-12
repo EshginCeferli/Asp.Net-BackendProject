@@ -1,0 +1,85 @@
+﻿@model Contact
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h1>Detail</h1>
+
+<div class="container-fluid my-3 mx-3">
+    <div class="table-responsive pt-3">
+        @*<div class="create-btn mb-3">
+                <a asp-action="Create" class="btn btn-success"><i class="fa-solid fa-plus"></i></a>
+            </div>*@
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+
+                    <th>
+                        Address
+                    </th>
+
+                    <th>
+                        Phone
+                    </th>
+
+                    <th>
+                        Mail
+                    </th>
+
+                    <th>
+                        Work-Hours
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+
+                    <td>
+                        @Model.Title
+                    </td>
+                    <td>
+                        @Model.Description
+                    </td>
+                    <td>
+                        @Model.Address
+                    </td>
+                    <td>
+                        @Model.Phone
+                    </td>
+                    <td>
+                        @Model.Mail
+                    </td>
+                    <td>
+                        @Model.WorkHour
+                    </td>
+
+                </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+    @*<nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center my-3">
+                <li class="page-item @(Model.HasPrevious == false ? "disabled":"")">
+                    <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage - 1)">Previous</a>
+                </li>
+                @for (int i = 1; i <= Model.TotalPage; i++)
+                {
+                    <li class="page-item @(i==Model.CurrentPage ? "disabled":"")"><a class="page-link" asp-action="Index" asp-route-page="@i">@i</a></li>
+                }
+
+                <li class="page-item @(Model.HasNext == true ? "":"disabled")">
+                    <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage + 1)">Next</a>
+                </li>
+            </ul>
+        </nav>*@
+</div>
+

@@ -82,18 +82,7 @@ namespace BackendProject.Areas.AdminArea.Controllers
 
             if (link == null) return NotFound();
 
-            //string path = Helper.GetFilePath(_env.WebRootPath, "img", link.Image);
-
-            //if (System.IO.File.Exists(path))
-            //{
-            //    System.IO.File.Delete(path);
-            //}
-
-            //Helper.DeleteFile(path);
-
-            //_context.Links.Remove(link);
-
-            //await _context.SaveChangesAsync();
+          
             link.IsDeleted = true;
 
             await _context.SaveChangesAsync();
@@ -111,6 +100,7 @@ namespace BackendProject.Areas.AdminArea.Controllers
 
             LinkEditVM linkEditVM = new LinkEditVM
             {
+                Image = link.Image,
                 Photo = link.Photo,
                 Title = link.Title,
                 Description = link.Description,
@@ -152,7 +142,7 @@ namespace BackendProject.Areas.AdminArea.Controllers
 
             string fileName = Guid.NewGuid().ToString() + "_" + link.Photo.FileName;
 
-            string newPath = Helper.GetFilePath(_env.WebRootPath, "img", fileName);
+            string newPath = Helper.GetFilePath(_env.WebRootPath, "assets/img/icon", fileName);
 
 
             using (FileStream stream = new FileStream(newPath, FileMode.Create))

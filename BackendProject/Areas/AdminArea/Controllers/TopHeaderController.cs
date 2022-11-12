@@ -21,8 +21,8 @@ namespace BackendProject.Areas.AdminArea.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            IEnumerable<TopHeader> topHeaders = await _context.TopHeaders.ToListAsync();
-            return View(topHeaders);
+           TopHeader topHeader = await _context.TopHeaders.FirstOrDefaultAsync();
+            return View(topHeader);
         }
 
         [HttpGet]

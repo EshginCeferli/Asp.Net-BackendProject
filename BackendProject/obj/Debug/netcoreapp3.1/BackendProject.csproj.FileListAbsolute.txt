@@ -506,3 +506,12 @@ C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\D
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Blog\Detail.cshtml.g.cs
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Blog\Edit.cshtml.g.cs
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Blog\Index.cshtml.g.cs
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Brand\Create.cshtml.g.cs
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Brand\Edit.cshtml.g.cs
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Brand\Index.cshtml.g.cs
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Widget\Detail.cshtml.g.cs
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Widget\Edit.cshtml.g.cs
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Widget\Index.cshtml.g.cs
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Contact\Edit.cshtml.g.cs
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Contact\Detail.cshtml.g.cs
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Contact\Index.cshtml.g.cs

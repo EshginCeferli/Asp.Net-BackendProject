@@ -54,7 +54,7 @@ namespace BackendProject.Controllers
                 }
                 return View(registerVM);
             }
-            return View();
+            return RedirectToAction("Login");
         }
 
 
