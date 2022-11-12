@@ -33,6 +33,8 @@ namespace BackendProject.Data
         public DbSet<Color> Colors { get; set; }
         public DbSet<Size> Sizes { get; set; }
         public DbSet<Setting> Settings { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<Test> Tests { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -55,6 +57,7 @@ namespace BackendProject.Data
             modelBuilder.Entity<RelatedHeader>().HasQueryFilter(m => !m.IsDeleted);
             modelBuilder.Entity<Color>().HasQueryFilter(m => !m.IsDeleted);
             modelBuilder.Entity<Size>().HasQueryFilter(m => !m.IsDeleted);
+            modelBuilder.Entity<Setting>().HasQueryFilter(m => !m.IsDeleted);
             modelBuilder.Entity<Setting>().HasQueryFilter(m => !m.IsDeleted);
         }
     }

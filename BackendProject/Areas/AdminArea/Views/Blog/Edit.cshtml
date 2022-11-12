@@ -5,8 +5,8 @@
 }
 
 <div class="container-fluid mx-5 my-3">
-    <h3>Slider image</h3>
-    <form asp-action="Edit" method="post" enctype="multipart/form-data">
+ 
+    <form asp-controller="Blog" asp-action="Edit" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <input class="form-control" asp-for="Photo">
             <span class="text-danger" asp-validation-for="Photo"></span>

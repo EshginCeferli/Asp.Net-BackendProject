@@ -1,4 +1,4 @@
-﻿         @model BlogDetailVM
+﻿@model BlogDetailVM
 @{
     ViewData["Title"] = "Blog Detail";
 }
@@ -63,6 +63,7 @@
                                 @foreach (var blog in Model.RecentBlogs.OrderByDescending(m => m.Id))
                                 {
                                     <li class="recent-posts">
+                                      
                                         <div class="recent-posts-image">
                                             <a href="blog-details.html"><img src="~/assets/img/blog/@blog.Image" alt="post thumb"></a>
                                         </div>
@@ -137,54 +138,25 @@
                             <div class="comment-section section-padding">
                                 <h5>03 Comment</h5>
                                 <ul>
-                                    <li>
-                                        <div class="author-avatar">
-                                            <img src="~/assets/img/blog/comment-icon.png" alt="">
-                                        </div>
-                                        <div class="comment-body">
-                                            <span class="reply-btn"><a href="#">Reply</a></span>
-                                            <h5 class="comment-author">Admin</h5>
-                                            <div class="comment-post-date">
-                                                15 Dec, 2019 at 9:30pm
+                                    @foreach (var item in Model.Comments.Where(m=>m.BlogId==Model.Blog.Id))
+                                    {
+                                        <li>
+                                            <div class="author-avatar">
+                                                <img src="~/assets/img/blog/comment-icon.png" alt="">
                                             </div>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim maiores
-                                                adipisci optio ex, laboriosam facilis non pariatur itaque illo sunt?
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li class="comment-children">
-                                        <div class="author-avatar">
-                                            <img src="~/assets/img/blog/comment-icon.png" alt="">
-                                        </div>
-                                        <div class="comment-body">
-                                            <span class="reply-btn"><a href="#">Reply</a></span>
-                                            <h5 class="comment-author">Admin</h5>
-                                            <div class="comment-post-date">
-                                                20 Nov, 2019 at 9:30pm
+                                            <div class="comment-body">
+                                                <span class="reply-btn"><a href="#">Reply</a></span>
+                                                <h5 class="comment-author">@item.UserName</h5>
+                                                <div class="comment-post-date">
+                                                    @item.Datetime
+                                                </div>
+                                                <p>
+                                                    @item.Content
+                                                </p>
                                             </div>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim maiores
-                                                adipisci optio ex, laboriosam facilis non pariatur itaque illo sunt?
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="author-avatar">
-                                            <img src="~/assets/img/blog/comment-icon.png" alt="">
-                                        </div>
-                                        <div class="comment-body">
-                                            <span class="reply-btn"><a href="#">Reply</a></span>
-                                            <h5 class="comment-author">Admin</h5>
-                                            <div class="comment-post-date">
-                                                25 Jan, 2019 at 9:30pm
-                                            </div>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim maiores
-                                                adipisci optio ex, laboriosam facilis non pariatur itaque illo sunt?
-                                            </p>
-                                        </div>
-                                    </li>
+                                        </li>
+                                    }
+
                                 </ul>
                             </div>
                             <!-- comment area end -->
@@ -192,14 +164,18 @@
                             <div class="blog-comment-wrapper">
                                 <h5>Leave A Reply</h5>
                                 <p>Email address will not be published. Required fields are marked *</p>
-                                <form action="#">
+                                <form asp-controller="BlogDetail" asp-action="Comment" method="post" enctype="multipart/form-data">
+                                    @*<input type="hidden" value="@Model.Blog.Id"/>*@
                                     <div class="comment-post-box">
                                         <div class="row">
                                             <div class="col-12">
+
+                                                <input type="hidden" asp-for="@Model.Comments.FirstOrDefault().BlogId" value="@Model.Blog.Id" />
+
                                                 <label>Comment</label>
-                                                <textarea name="commnet" placeholder="Write a comment"></textarea>
+                                                <input asp-for="@Model.Comments.FirstOrDefault().Content" value=""/>
                                             </div>
-                                            <div class="col-lg-4 col-md-4">
+                                            @*<div class="col-lg-4 col-md-4">
                                                 <label>Name</label>
                                                 <input type="text" class="coment-field" placeholder="Name">
                                             </div>
@@ -213,11 +189,12 @@
                                             </div>
                                             <div class="col-12">
                                                 <div class="coment-btn">
-                                                    <input class="btn" type="submit" name="submit" value="POST COMMENT">
+
                                                 </div>
-                                            </div>
+                                            </div>*@
                                         </div>
                                     </div>
+                                    <button class="btn" type="submit">Comment</button>
                                 </form>
                             </div>
                             <!-- start blog comment box -->

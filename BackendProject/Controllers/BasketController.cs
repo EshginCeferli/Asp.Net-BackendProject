@@ -75,5 +75,16 @@ namespace BackendProject.Controllers
             Response.Cookies.Append("basket", JsonConvert.SerializeObject(basketItems));
             return RedirectToAction("Index", "Basket");           
         }
+
+        public IActionResult RemoveProductHome(int? id)
+        {
+            List<BasketVM> basketItems = JsonConvert.DeserializeObject<List<BasketVM>>(Request.Cookies["basket"]);
+
+            var delProduct = basketItems.FirstOrDefault(m => m.Id == id);
+            basketItems.Remove(delProduct);
+
+            Response.Cookies.Append("basket", JsonConvert.SerializeObject(basketItems));
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

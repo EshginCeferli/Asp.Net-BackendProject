@@ -62,15 +62,15 @@
                             <ul class="recent-posts-inner">
                                 @foreach (var blogs in Model.Datas)
                                 {
-                                    @foreach (var item in blogs.Blogs.OrderByDescending(m=>m.Id))
+                                    @foreach (var item in blogs.Blogs.OrderByDescending(m => m.Id))
                                     {
                                         <li class="recent-posts">
                                             <div class="recent-posts-image">
-                                                <a href="blog-details.html"><img src="~/assets/img/blog/@item.Image" alt="post thumb"></a>
+                                                <a asp-controller="BlogDetail" asp-action="Index" asp-route-id="@item.Id"><img src="~/assets/img/blog/@item.Image" alt="post thumb"></a>
                                             </div>
                                             <div class="recent-posts-body">
                                                 <span class="recent-posts-meta">@item.Date</span>
-                                                <h6 class="recent-posts-title"><a href="blog-details.html">@item.Title</a></h6>
+                                                <h6 class="recent-posts-title"><a asp-controller="Blog" asp-action="Index" asp-route-id="@item.Id">@item.Title</a></h6>
                                             </div>
                                         </li>
                                     }
@@ -115,19 +115,19 @@
                     <div class="row">
                         @foreach (var blogs in Model.Datas)
                         {
-                            @foreach (var item in blogs.Blogs.OrderByDescending(m=>m.Id))
+                            @foreach (var item in blogs.Blogs)
                             {
                                 <div class="col-md-6">
                                     <!-- blog single item start -->
                                     <div class="blog-post-item mb-30">
                                         <div class="blog-thumb">
-                                            <a href="blog-details.html">
+                                            <a asp-controller="BlogDetail" asp-action="Index" asp-route-id="@item.Id">
                                                 <img src="~/assets/img/blog/@item.Image" alt="blog thumb">
                                             </a>
                                         </div>
                                         <div class="blog-content">
                                             <h5 class="blog-title">
-                                                <a href="blog-details.html">
+                                                <a asp-controller="BlogDetail" asp-action="Index" asp-route-id="@item.Id">
                                                     @item.Title
                                                 </a>
                                             </h5>
@@ -135,7 +135,7 @@
                                                 <li><span>By: </span>@item.By</li>
                                                 <li><span>On: </span>@item.Date</li>
                                             </ul>
-                                            <a href="blog-details.html" class="read-more">Read More...</a>
+                                            <a asp-controller="BlogDetail" asp-action="Index" asp-route-id="@item.Id" class="read-more">Read More...</a>
                                         </div>
                                     </div>
                                     <!-- blog single item start -->

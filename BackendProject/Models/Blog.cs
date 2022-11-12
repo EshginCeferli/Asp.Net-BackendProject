@@ -20,5 +20,6 @@ namespace BackendProject.Models
         [NotMapped]
         [Required(ErrorMessage = "Can't be empty")]
         public IFormFile Photo { get; set; }
+        public ICollection<Comment> Comments { get; set; }
     }
 }
