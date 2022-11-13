@@ -21,8 +21,8 @@ namespace BackendProject.Areas.AdminArea.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            RelatedHeader relatedHeader = await _context.RelatedHeaders.FirstOrDefaultAsync();
-            return View(relatedHeader);
+            IEnumerable<RelatedHeader> relatedHeaders = await _context.RelatedHeaders.ToListAsync();
+            return View(relatedHeaders);
         }
 
         [HttpGet]

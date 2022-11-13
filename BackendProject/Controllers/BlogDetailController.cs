@@ -79,9 +79,8 @@ namespace BackendProject.Controllers
             {
                 Content = newComment.Content,
                 BlogId = newComment.BlogId,
-                UserName = User.Identity.Name.ToString(),
-                Datetime = DateTime.Now.ToString()
-                               
+                //UserName = User.Identity.Name.ToString(),
+                Datetime = DateTime.Now.ToString()                               
             };
 
             await _context.Comments.AddAsync(comment);

@@ -41,13 +41,13 @@ namespace BackendProject.Areas.AdminArea.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int? id, Widget updatedWidget)
-        {            
-            if (id is null) return BadRequest();
-
-            if (updatedWidget.Photo == null) return RedirectToAction(nameof(Index));
-
+        public async Task<IActionResult> Edit(int id, Widget updatedWidget)
+        {
             Widget dbWidget = await _context.Widgets.FirstOrDefaultAsync(m => m.Id == id);
+            dbWidget.Fullname = updatedWidget.Fullname;
+            dbWidget.Role = updatedWidget.Role;
+            if (updatedWidget.Photo == null) return RedirectToAction(nameof(Index));
+                       
 
             if (dbWidget == null) return NotFound();
 
@@ -63,13 +63,13 @@ namespace BackendProject.Areas.AdminArea.Controllers
                 return View(dbWidget);
             }
 
-            string oldPath = Helper.GetFilePath(_env.WebRootPath, "assets/img/updatedWidget", dbWidget.Image);
+            string oldPath = Helper.GetFilePath(_env.WebRootPath, "assets/img/blog", dbWidget.Image);
 
             Helper.DeleteFile(oldPath);
 
             string fileName = Guid.NewGuid().ToString() + "_" + updatedWidget.Photo.FileName;
 
-            string newPath = Helper.GetFilePath(_env.WebRootPath, "assets/img/updatedWidget", fileName);
+            string newPath = Helper.GetFilePath(_env.WebRootPath, "assets/img/blog", fileName);
 
 
             using (FileStream stream = new FileStream(newPath, FileMode.Create))
@@ -78,8 +78,7 @@ namespace BackendProject.Areas.AdminArea.Controllers
             }
 
             dbWidget.Image = fileName;
-            dbWidget.Fullname = updatedWidget.Fullname;
-            dbWidget.Role = updatedWidget.Role;
+          
 
             await _context.SaveChangesAsync();
 

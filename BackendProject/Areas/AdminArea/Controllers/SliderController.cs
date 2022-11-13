@@ -107,11 +107,16 @@ namespace BackendProject.Areas.AdminArea.Controllers
         {
             if (id is null) return BadRequest();
 
-            if (slider.Photo == null) return RedirectToAction(nameof(Index));
+          
 
-            var dbSlider = await GetByIdAsync((int)id);
+            var dbSlider = await GetByIdAsync((int)id);          
 
             if (dbSlider == null) return NotFound();
+            dbSlider.Title = slider.Title;
+            dbSlider.Header = slider.Header;
+            dbSlider.Description = slider.Description;
+
+            if (slider.Photo == null) return RedirectToAction(nameof(Index));
 
             if (!slider.Photo.CheckFileType("image/"))
             {
@@ -140,9 +145,8 @@ namespace BackendProject.Areas.AdminArea.Controllers
             }
 
             dbSlider.Image = fileName;
-            dbSlider.Title = slider.Title;
-            dbSlider.Header = slider.Header;
-            dbSlider.Description = slider.Description;
+            
+            
 
             await _context.SaveChangesAsync();
 

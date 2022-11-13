@@ -10,7 +10,7 @@ namespace BackendProject.Models
         public string UserName { get; set; }
         public string Content { get; set; }
         public int BlogId { get; set; }
-        public string Datetime { get; set; }
+        public string Datetime { get; set; } = DateTime.Now.ToString();
         public Blog Blog { get; set; }
     }
 }

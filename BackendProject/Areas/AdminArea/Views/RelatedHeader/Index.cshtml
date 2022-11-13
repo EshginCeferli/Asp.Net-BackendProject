@@ -1,4 +1,4 @@
-﻿@model RelatedHeader
+﻿@model IEnumerable<RelatedHeader>
 @{
     ViewData["Title"] = "Index";
 }
@@ -26,25 +26,30 @@
                     </th>
                 </tr>
             </thead>
-            <tbody>               
+            <tbody>
+                @foreach (var item in Model)
+                {
+
                     <tr>
                         <td>
-                            @Html.Raw(Model.Title)
+                            @Html.Raw(item.Title)
                         </td>
                         <td>
-                            @Html.Raw(Model.Description)
+                            @Html.Raw(item.Description)
                         </td>
 
 
                         <td style="text-align: center;">
-                            <a asp-action="Detail" asp-route-id="@Model.Id" class="btn btn-info"><i class="mdi mdi-information mx-0"></i></a>
-                            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary"><i class="mdi mdi-table-edit"></i></a>
-                            <form style="display: inline-block;" asp-action="Delete" asp-route-id="@Model.Id" method="post">
+                            <a asp-action="Detail" asp-route-id="@item.Id" class="btn btn-info"><i class="mdi mdi-information mx-0"></i></a>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary"><i class="mdi mdi-table-edit"></i></a>
+                            <form style="display: inline-block;" asp-action="Delete" asp-route-id="@item.Id" method="post">
                                 <button type="submit" class="btn btn-danger"><i class="mdi mdi-delete-forever"></i></button>
                             </form>
                         </td>
                     </tr>
-                             
+
+                }
+
 
             </tbody>
         </table>
