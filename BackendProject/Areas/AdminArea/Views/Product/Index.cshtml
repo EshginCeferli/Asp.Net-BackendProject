@@ -1,8 +1,9 @@
-﻿@model List<Product>
+﻿@model Paginate<ProductListVM>
 
 @{
     ViewData["Title"] = "Index";
-
+    int take = ViewBag.take;
+    int count = (Model.CurrentPage - 1) * take + 1;
 }
 
 <div class="container-fluid my-3 mx-3">
@@ -12,16 +13,24 @@
         </div>
         <table class="table table-bordered">
             <thead>
-                <tr>                    
+                <tr>
+                    <th>
+                        #
+                    </th>
                     <th>
                         Image
                     </th>
                     <th>
-                        Name
+                        Title
                     </th>
-                   
+                    <th>
+                        Description
+                    </th>
                     <th>
                         Price
+                    </th>
+                    <th>
+                        Category
                     </th>
                     <th style="text-align: center;">
                         Settings
@@ -29,20 +38,27 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (Product product in Model)
+                @foreach (ProductListVM product in Model.Datas)
                 {
                     <tr>
-                        
                         <td>
-                            <img src="~/assets/img/product/@product.ProductImages.FirstOrDefault(m=>m.IsMain)?.Image"  alt="Product" />
+                            @count
                         </td>
                         <td>
-                            @Html.Raw(product.Name)
+                            <img src="~/assets/img/product/@product.MainImage" alt="Product" />
                         </td>
                         <td>
-                            @Html.Raw(product.Price)
+                            @Html.Raw(product.Title)
                         </td>
-                      
+                        <td>
+                            @Html.Raw(product.Description)
+                        </td>
+                        <td>
+                            @Html.Raw(product.Price.ToString("0.#####")) ₼
+                        </td>
+                        <td>
+                            @Html.Raw(product.CategoryName)
+                        </td>
                         <td style="text-align: center;">
                             <a asp-action="Detail" asp-route-id="@product.Id" class="btn btn-info"><i class="mdi mdi-information mx-0"></i></a>
                             <a asp-action="Edit" asp-route-id="@product.Id" class="btn btn-primary"><i class="mdi mdi-table-edit"></i></a>
@@ -51,14 +67,14 @@
                             </form>
                         </td>
                     </tr>
-                 
+                    count++;
                 }
 
 
             </tbody>
         </table>
     </div>
-    @*<nav aria-label="Page navigation example">
+    <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center my-3">
             <li class="page-item @(Model.HasPrevious == false ? "disabled":"")">
                 <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage - 1)">Previous</a>
@@ -78,5 +94,6 @@
                 </a>
             </li>
         </ul>
-    </nav>*@
+    </nav>
 </div>
+

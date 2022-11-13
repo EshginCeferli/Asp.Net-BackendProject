@@ -27,8 +27,12 @@ namespace BackendProject.Controllers
                 .ToListAsync();
             Widget widget = await _context.Widgets.FirstOrDefaultAsync();
             IEnumerable<Social> socials = await _context.Socials.ToListAsync();
-            IEnumerable<Category> categories = await _context.Categories.ToListAsync();
+            IEnumerable<Category> categories = await _context.Categories.Include(m=>m.Product).ToListAsync();
             IEnumerable<Tag> tags = await _context.Tags.ToListAsync();
+
+            ViewBag.catCount = await _context.Products
+                .Include(m => m.Category).CountAsync();
+                                     
 
             ViewBag.take = take;
 

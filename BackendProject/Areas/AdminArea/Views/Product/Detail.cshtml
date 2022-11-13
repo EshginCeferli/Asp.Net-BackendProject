@@ -1,0 +1,67 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h1>Detail</h1>
+
+<div class="container-fluid my-3 mx-3">
+    <div class="table-responsive pt-3">
+        @*<div class="create-btn mb-3">
+                <a asp-action="Create" class="btn btn-success"><i class="fa-solid fa-plus"></i></a>
+            </div>*@
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Price
+                    </th>
+
+                    <th>
+                        Description
+                    </th>
+
+                    <th>
+                        Category
+                    </th>
+
+                 
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="~/assets/img/product/@Model.ProductImages.FirstOrDefault()?.Image" alt="Alternate Text" />
+                    </td>
+                    <td>
+                        @Model.Name
+                    </td>
+                    <td>
+                        @Model.Price $
+                    </td>
+                    <td>
+                        @Model.Description
+                    </td>
+
+                    <td>
+                        @Model.Category.Name
+                    </td>
+
+
+                </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+
+</div>
+

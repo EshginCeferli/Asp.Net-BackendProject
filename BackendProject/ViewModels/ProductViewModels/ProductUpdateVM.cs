@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BackendProject.Models;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -7,20 +8,18 @@ using System.Threading.Tasks;
 
 namespace BackendProject.ViewModels.ProductViewModels
 {
-    public class ProductCreateVM
+    public class ProductUpdateVM
     {
+        public int Id { get; set; }
         [Required]
         public string Name { get; set; }
-
         [Required]
         public int Price { get; set; }
         [Required]
         public int Discount { get; set; }
-        [Required]
         public string Description { get; set; }
-        
         public int CategoryId { get; set; }
-        [Required]
+        public ICollection<ProductImage> Images { get; set; }
         public List<IFormFile> Photos { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model ProductCreateVM
+﻿@model ProductUpdateVM
 @{
     ViewData["Title"] = "Edit";
 }
@@ -13,7 +13,13 @@
                         <p class="card-description">
                             Product
                         </p>
-                        <form asp-controller="Product" asp-action="Create" enctype="multipart/form-data" class="forms-sample" method="post">
+                        <div class="my-3 images">
+                            @foreach (var item in Model.Images)
+                            {
+                                <img src="~/assets/img/product/@item.Image" style="width:150px; height:150px" alt="Alternate Text" />
+                            }
+                        </div>
+                        <form asp-controller="Product" asp-action="Edit" enctype="multipart/form-data" class="forms-sample" method="post">
                             <div class="form-group">
                                 <label asp-for="Name">Title</label>
                                 <input class="form-control" asp-for="Name">
@@ -28,11 +34,6 @@
                                 <label asp-for="Price">Price</label>
                                 <input type="number" min="0" step=".01" class="form-control" asp-for="Price">
                                 <span asp-validation-for="Price" class="text-danger my-1"></span>
-                            </div>
-                            <div class="form-group">
-                                <label asp-for="Discount">Discount(If doesnt have discount add 1)</label>
-                                <input type="number" min="0" step=".01" class="form-control" asp-for="Discount">
-                                <span asp-validation-for="Discount" class="text-danger my-1"></span>
                             </div>
                             <div class="form-group">
                                 <label asp-for="CategoryId">Categories</label>
@@ -52,9 +53,3 @@
         </div>
     </div>
 </div>
-
-
-@section Scripts{
-    <partial name="_ValidationPartial" />
-}
-
