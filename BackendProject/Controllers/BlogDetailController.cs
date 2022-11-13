@@ -88,7 +88,8 @@ namespace BackendProject.Controllers
                 Content = newComment.Content,
                 BlogId = newComment.BlogId,
                 UserName = unknown,
-                Datetime = DateTime.Now.ToString()                               
+                Datetime = DateTime.Now.ToString(),
+                Count = commentCount                
             };
 
             await _context.Comments.AddAsync(comment);

@@ -60,16 +60,16 @@
                         <div class="blog-widget">
                             <h4 class="blog-widget-title">Recent Posts</h4>
                             <ul class="recent-posts-inner">
-                                @foreach (var blog in Model.RecentBlogs.OrderByDescending(m => m.Id))
+                                @foreach (var blog in Model.RecentBlogs)
                                 {
                                     <li class="recent-posts">
                                       
                                         <div class="recent-posts-image">
-                                            <a href="blog-details.html"><img src="~/assets/img/blog/@blog.Image" alt="post thumb"></a>
+                                            <a asp-controller="BlogDetail" asp-route-id="@blog.Id"><img src="~/assets/img/blog/@blog.Image" alt="post thumb"></a>
                                         </div>
                                         <div class="recent-posts-body">
                                             <span class="recent-posts-meta">@blog.Date</span>
-                                            <h6 class="recent-posts-title"><a href="blog-details.html">@blog.Title</a></h6>
+                                            <h6 class="recent-posts-title"><a asp-controller="BlogDetail" asp-route-id="@blog.Id">@blog.Title</a></h6>
                                         </div>
                                     </li>
                                 }
@@ -136,7 +136,7 @@
                             <!-- blog single item start -->
                             <!-- comment area start -->
                             <div class="comment-section section-padding">
-                                <h5>03 Comment</h5>
+                                <h5>@Model.Comments.Where(m => m.BlogId == Model.Blog.Id).Count() Comments</h5>
                                 <ul>
                                     @foreach (var item in Model.Comments.Where(m=>m.BlogId==Model.Blog.Id))
                                     {
