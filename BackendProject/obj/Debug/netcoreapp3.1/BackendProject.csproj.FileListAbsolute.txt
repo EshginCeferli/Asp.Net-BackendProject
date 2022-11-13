@@ -515,3 +515,15 @@ C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\D
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\BackendProject.pdb
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\BackendProject.genruntimeconfig.cache
 C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\BackendProject.csproj.AssemblyReference.cache
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\bin\Debug\netcoreapp3.1\System.Formats.Asn1.dll
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Cng.dll
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\bin\Debug\netcoreapp3.1\System.Text.Encoding.CodePages.dll
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Security.Cryptography.Cng.dll
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\System.Text.Encoding.CodePages.dll
+C:\Users\ESQIN\OneDrive\İş masası\Asp.Net-BackendProject\BackendProject\obj\Debug\netcoreapp3.1\Razor\Views\Account\Verify.cshtml.g.cs

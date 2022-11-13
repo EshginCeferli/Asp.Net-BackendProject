@@ -13,6 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BackendProject.Services.Interfaces;
 
 namespace BackendProject
 {
@@ -44,13 +45,12 @@ namespace BackendProject
                 opt.Password.RequiredLength = 8;
                 opt.Password.RequireUppercase = false;
 
+                opt.SignIn.RequireConfirmedEmail = true;
                 opt.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+/ ";
 
                 opt.User.RequireUniqueEmail = true;
 
                 
-
-
                 opt.Lockout.MaxFailedAccessAttempts = 3;
                 opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
                 opt.Lockout.AllowedForNewUsers = true;
@@ -64,6 +64,8 @@ namespace BackendProject
             });
 
             services.AddScoped<LayoutService>();
+            services.AddScoped<IEmailService, EmailService>();
+            services.AddScoped<IFileService, FileService>();
         }
 
         
@@ -85,6 +87,7 @@ namespace BackendProject
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthentication();

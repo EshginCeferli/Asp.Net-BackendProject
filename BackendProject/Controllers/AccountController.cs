@@ -1,5 +1,6 @@
 ﻿using BackendProject.Migrations;
 using BackendProject.Models;
+using BackendProject.Services.Interfaces;
 using BackendProject.ViewModels.AccountViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -14,11 +15,21 @@ namespace BackendProject.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IEmailService _emailService;
+        private readonly IFileService _fileService;
 
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        public AccountController(UserManager<AppUser> userManager,
+            SignInManager<AppUser> signInManager,
+            IEmailService emailService,
+            IFileService fileService,
+            RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _emailService = emailService;
+            _fileService = fileService;
+            _roleManager = roleManager;
         }
 
         [HttpGet]
@@ -54,7 +65,48 @@ namespace BackendProject.Controllers
                 }
                 return View(registerVM);
             }
-            return RedirectToAction("Login");
+
+            string token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+
+            string link = Url.Action(nameof(ConfirmEmail), "Account", new { userId = user.Id, token },
+                Request.Scheme, Request.Host.ToString());
+
+            string path = "wwwroot/assets/templates/verify.html";
+            string body = string.Empty;
+            string subject = "Verify email";
+
+            body = _fileService.ReadFile(path, body);
+
+            body = body.Replace("{{link}}", link);
+            body = body.Replace("{{fullname}}", user.FullName);
+
+            _emailService.Send(user.Email, subject, body);
+
+            //await _signInManager.SignInAsync(user, false);
+
+
+            return RedirectToAction(nameof(VerifyEmail)); ;
+        }
+
+        public async Task<IActionResult> ConfirmEmail(string userId, string token)
+        {
+            if (userId == null || token == null) return BadRequest();
+
+            AppUser user = await _userManager.FindByIdAsync(userId);
+
+            if (user == null) return NotFound();
+
+            await _userManager.ConfirmEmailAsync(user, token);
+
+            await _signInManager.SignInAsync(user, false);
+
+            return RedirectToAction("Index", "Home");
+
+        }
+
+        public IActionResult VerifyEmail()
+        {
+            return View();
         }
 
 

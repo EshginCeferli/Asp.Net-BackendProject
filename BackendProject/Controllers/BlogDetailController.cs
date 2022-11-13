@@ -74,12 +74,20 @@ namespace BackendProject.Controllers
         public async Task<IActionResult> Comment(Comment newComment)
         {
             if (!ModelState.IsValid) return BadRequest();
+            var commentCount = await _context.Comments.CountAsync();
+            string unknown = "User unknown";
+
+            if (User.Identity.Name !=  null)
+            {
+                unknown = User.Identity.Name.ToString();
+            }
+
 
             Comment comment = new Comment()
             {
                 Content = newComment.Content,
                 BlogId = newComment.BlogId,
-                //UserName = User.Identity.Name.ToString(),
+                UserName = unknown,
                 Datetime = DateTime.Now.ToString()                               
             };
 

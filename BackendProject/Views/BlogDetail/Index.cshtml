@@ -146,7 +146,7 @@
                                             </div>
                                             <div class="comment-body">
                                                 <span class="reply-btn"><a href="#">Reply</a></span>
-                                                @*<h5 class="comment-author">@item.UserName</h5>*@
+                                                <h5 class="comment-author">@item.UserName</h5>
                                                 <div class="comment-post-date">
                                                     @item.Datetime
                                                 </div>
@@ -173,7 +173,7 @@
                                                 <input type="hidden" asp-for="@Model.Comments.FirstOrDefault().BlogId" value="@Model.Blog.Id" />
 
                                                 <label>Comment</label>
-                                                <input asp-for="@Model.Comments.FirstOrDefault().Content" value=""/>
+                                                <input asp-for="@Model.Comments.FirstOrDefault().Content" value= placeholder="addcoment"/>
                                             </div>
                                             @*<div class="col-lg-4 col-md-4">
                                                 <label>Name</label>
