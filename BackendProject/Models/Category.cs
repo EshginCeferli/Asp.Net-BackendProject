@@ -9,5 +9,6 @@ namespace BackendProject.Models
     {
         public string Name { get; set; }
         public int Count { get; set; }
+        public List<Product> Product { get; set; }        
     }
 }

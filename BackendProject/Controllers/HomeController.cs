@@ -28,7 +28,8 @@ namespace BackendProject.Controllers
             IEnumerable<Slider> sliders = await _context.Sliders.ToListAsync();
             IEnumerable<Link> links = await _context.Links.ToListAsync();
             IEnumerable<Product> products = await _context.Products
-                .Include(m=>m.ProductImages)                 
+                .Include(m=>m.ProductImages) 
+                .Include(m=>m.Category)
                 .ToListAsync();
             ProductHeader productHeader = await _context.ProductHeaders.FirstOrDefaultAsync();
             IEnumerable<Banner> banners = await _context.Banners.ToListAsync();

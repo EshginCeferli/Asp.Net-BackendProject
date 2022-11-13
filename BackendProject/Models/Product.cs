@@ -11,10 +11,13 @@ namespace BackendProject.Models
         public string Name { get; set; }
         public int Price { get; set; }
         [Column(TypeName = "decimal(18,4)")]
-        public decimal Discount { get; set; }
-        public List<ProductImage> ProductImages { get; set; }
+        public decimal Discount { get; set; }       
         public int? SellCount { get; set; }
         public string Description { get; set; }
+        public string Date { get; set; } = DateTime.Now.ToString();
+        public List<ProductImage> ProductImages { get; set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }     
         //public int ProductHeaderId { get; set; }
         //public ProductHeader ProductHeader { get; set; }
     }

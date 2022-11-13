@@ -31,14 +31,18 @@ namespace BackendProject.ViewComponents
             if (Request.Cookies["basket"] != null)
             {
                 List<BasketVM> basket = JsonConvert.DeserializeObject<List<BasketVM>>(Request.Cookies["basket"]);
+                                
                 //List<BasketDetailVM> basketDetail = new List<BasketDetailVM>();
 
                
                 foreach (var item in basket)
                 {
                     Product product = await _context.Products
-                        .Where(m => m.Id == item.Id && m.IsDeleted == false)
-                        .Include(m => m.ProductImages).FirstOrDefaultAsync();
+                        .Where(m => m.Id == item.Id )
+                        .Include(m => m.ProductImages)
+                        .Include(m=>m.Category)
+                        .FirstOrDefaultAsync()
+                        ;
 
                     BasketDetailVM newBasket = new BasketDetailVM
                     {
@@ -47,8 +51,9 @@ namespace BackendProject.ViewComponents
                         Image = product.ProductImages.Where(m => m.IsMain).FirstOrDefault().Image,
                         Price = product.Price,
                         Count = item.Count,
+                        CategoryId = product.CategoryId,
                         Total = product.Price * item.Count,
-
+                       
                     };                  
 
                     basketDetailVMs.Add(newBasket);

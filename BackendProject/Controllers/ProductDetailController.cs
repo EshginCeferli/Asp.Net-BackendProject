@@ -24,7 +24,9 @@ namespace BackendProject.Controllers
             if (id is null) return BadRequest();
 
             Product product = await _context.Products.Include(m => m.ProductImages).FirstOrDefaultAsync(m => m.Id == id);
-            List<Product> products = await _context.Products.Take(5).Include(m=>m.ProductImages)?.ToListAsync();
+            List<Product> products = await _context.Products
+                .Include(m=>m.Category)
+                .Take(5).Include(m=>m.ProductImages)?.ToListAsync();
             RelatedHeader relatedHeader = await _context.RelatedHeaders.FirstOrDefaultAsync();
             List<Social> social = await _context.Socials.ToListAsync();
 
