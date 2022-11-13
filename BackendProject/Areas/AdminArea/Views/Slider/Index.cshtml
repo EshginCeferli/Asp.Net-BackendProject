@@ -43,7 +43,7 @@
                     </td>
 
                     <td style="text-align: center;">
-                        <a asp-action="Detail" asp-route-id="@item.Id" type="button" class="btn btn-info"><i class="mdi mdi-information mx-0"></i></a>
+                        <a asp-area="AdminArea" asp-controller="Slider" asp-action="Detail" asp-route-id="@item.Id" type="button" class="btn btn-info"><i class="mdi mdi-information mx-0"></i></a>
                         <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary"><i class="mdi mdi-table-edit"></i></a>
                         <form style="display: inline-block;" asp-action="Delete" asp-route-id="@item.Id" method="post">
                             <button type="submit" class="btn btn-danger"><i class="mdi mdi-delete-forever"></i></button>

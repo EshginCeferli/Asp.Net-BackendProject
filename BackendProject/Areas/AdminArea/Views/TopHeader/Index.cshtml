@@ -27,9 +27,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    @foreach (var item in Model)
-                    {
+                @foreach (var item in Model)
+                {
+                    <tr>
+
                         <td>
                             @Html.Raw(item.Title)
                         </td>
@@ -45,10 +46,10 @@
                                 <button type="submit" class="btn btn-danger"><i class="mdi mdi-delete-forever"></i></button>
                             </form>
                         </td>
-                    }
 
-                </tr>
 
+                    </tr>
+                }
 
             </tbody>
         </table>

@@ -30,23 +30,24 @@
                 <div class="col-lg-6">
                     <div class="contact-message">
                         <h2 class="contact-title">tell us your project</h2>
-                        <form id="contact-form" action="http://whizthemes.com/mail-php/genger/mail.php" method="post" class="contact-form">
+                        <form  asp-controller="Contact" asp-action="SendMessage" method="post" enctype="multipart/form-data" class="contact-form">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <input name="first_name" placeholder="Name *" type="text" required>
+                                    
+                                    <input asp-for="@Model.Message.Name" placeholder="Name *" >
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <input name="phone" placeholder="Phone *" type="text" required>
+                                    <input asp-for="@Model.Message.Phone"  placeholder="Phone *" >
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <input name="email_address" placeholder="Email *" type="text" required>
+                                    <input placeholder="Email *" asp-for="@Model.Message.Email">
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <input name="contact_subject" placeholder="Subject *" type="text">
+                                    <input placeholder="Subject *" asp-for="@Model.Message.Subject">
                                 </div>
                                 <div class="col-12">
                                     <div class="contact2-textarea text-center">
-                                        <textarea placeholder="Message *" name="message" class="form-control2"  required=""></textarea>
+                                        <input placeholder="Message" asp-for="@Model.Message.Content" />
                                          
                                     </div>
                                     <div class="contact-btn">

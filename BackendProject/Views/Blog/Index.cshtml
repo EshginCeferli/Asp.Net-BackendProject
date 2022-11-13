@@ -62,7 +62,7 @@
                             <ul class="recent-posts-inner">
                                 @foreach (var blogs in Model.Datas)
                                 {
-                                    @foreach (var item in blogs.Blogs.OrderByDescending(m => m.Id))
+                                    @foreach (var item in blogs.Blogs)
                                     {
                                         <li class="recent-posts">
                                             <div class="recent-posts-image">
@@ -147,12 +147,20 @@
                     <!-- start pagination area -->
                     <div class="paginatoin-area text-center">
                         <ul class="pagination-box">
-                            <li class="page-item "><button class="Previous @(Model.HasPrevious == false ? "":"disabled")" asp-action="Index" asp-route-page="@(Model.CurrentPage - 1)"><i class="ion-ios-arrow-left"></i></button></li>
+                            <li class="page-item @(Model.HasPrevious == false ? "disabled":"")">
+                                <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage - 1)">
+                                    <i class="ion-ios-arrow-left"></i>
+                                </a>
+                            </li>
                             @for (int i = 1; i <= Model.TotalPage; i++)
                             {
                                 <li class="page-item"><button class=" @(i==Model.CurrentPage ? "disabled":"")" asp-action="Index" asp-route-page="@i">@i</button></li>
                             }
-                            <li class="page-item " ><button class="Next @(Model.HasNext == true ? "":"disabled")" asp-action="Index" asp-route-page="@(Model.CurrentPage + 1)"><i class="ion-ios-arrow-right"></i></button></li>
+                            <li class="page-item @(Model.HasNext == true ? "" :"disabled")">
+                                <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage + 1)">
+                                    <i class="ion-ios-arrow-right"></i>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <!-- end pagination area -->

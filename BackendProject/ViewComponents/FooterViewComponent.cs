@@ -26,14 +26,12 @@ namespace BackendProject.ViewComponents
             Contact contact = await _context.Contacts.FirstOrDefaultAsync();
             IEnumerable<Category> categories = await _context.Categories.ToListAsync();
 
-
             FooterVM footerVM = new FooterVM
             {
                 Socials = socials,
                 Contact = contact,
                 Categories = categories
             };
-
 
             return await Task.FromResult(View(footerVM));
         }

@@ -153,10 +153,23 @@ namespace BackendProject.Areas.AdminArea.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Detail(int? id)
+        {
+            if (id is null) return BadRequest();
+
+            Slider slider = await _context.Sliders.FirstOrDefaultAsync(m => m.Id == id);
+
+            
+            return View(slider);
+        }
+
         private async Task<Slider> GetByIdAsync(int id)
         {
             return await _context.Sliders.FindAsync(id);
         }
+
+        
 
     }
 }

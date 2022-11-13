@@ -35,7 +35,7 @@ namespace BackendProject.Data
         public DbSet<Setting> Settings { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Test> Tests { get; set; }
-
+        public DbSet<Message> Messages { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -59,6 +59,7 @@ namespace BackendProject.Data
             modelBuilder.Entity<Size>().HasQueryFilter(m => !m.IsDeleted);
             modelBuilder.Entity<Setting>().HasQueryFilter(m => !m.IsDeleted);
             modelBuilder.Entity<Setting>().HasQueryFilter(m => !m.IsDeleted);
+            modelBuilder.Entity<Message>().HasQueryFilter(m => !m.IsDeleted);
         }
     }
 }

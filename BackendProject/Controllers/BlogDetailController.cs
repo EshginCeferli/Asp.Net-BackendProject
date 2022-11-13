@@ -72,8 +72,7 @@ namespace BackendProject.Controllers
         [HttpPost]
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> Comment(Comment newComment)
-        {
-            if (!ModelState.IsValid) return BadRequest();
+        {            
             var commentCount = await _context.Comments.CountAsync();
             string unknown = "User unknown";
 
@@ -81,7 +80,6 @@ namespace BackendProject.Controllers
             {
                 unknown = User.Identity.Name.ToString();
             }
-
 
             Comment comment = new Comment()
             {

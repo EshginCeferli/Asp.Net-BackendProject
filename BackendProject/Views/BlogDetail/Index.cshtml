@@ -172,8 +172,8 @@
 
                                                 <input type="hidden" asp-for="@Model.Comments.FirstOrDefault().BlogId" value="@Model.Blog.Id" />
 
-                                                <label>Comment</label>
-                                                <input asp-for="@Model.Comments.FirstOrDefault().Content" value= placeholder="addcoment"/>
+                                                <label for="content" >Comment</label>
+                                                <input asp-for="@Model.Comments.FirstOrDefault().Content" value= placeholder="Add your comment about blog"/>
                                             </div>
                                             @*<div class="col-lg-4 col-md-4">
                                                 <label>Name</label>
