@@ -10,9 +10,13 @@ namespace BackendProject.Models
 {
     public class Link : BaseEntity
     {
+        
         public string Image { get; set; }
+        [Required]
         public string Title { get; set; }
+        [Required]
         public string Description { get; set; }
+        [Required]
         public string Color { get; set; }
         [NotMapped]
         [Required(ErrorMessage = "Can't be empty")]

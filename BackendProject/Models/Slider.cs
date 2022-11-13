@@ -10,8 +10,11 @@ namespace BackendProject.Models
 {
     public class Slider : BaseEntity
     {
+        [Required]
         public string Title { get; set; }
+        [Required]
         public string Header { get; set; }
+        [Required]
         public string Description { get; set; }
         public string Image { get; set; }
         [NotMapped]

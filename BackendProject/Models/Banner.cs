@@ -10,7 +10,9 @@ namespace BackendProject.Models
 {
     public class Banner:BaseEntity
     {
+        [Required]
         public string Title { get; set; }
+        [Required]
         public string Subtitle { get; set; }
         public string Image { get; set; }
         [NotMapped]
